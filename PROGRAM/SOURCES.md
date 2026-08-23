@@ -36,3 +36,40 @@ notes that the copy is not committed.
 - **Notes:** paper carries an AI Assistance Disclosure (pipeline developed with LLM assistance;
   all reported statistics computed by deterministic Python on the fixed corpus). Corpus:
   ICIT/Yajnadevam digitization, 1,916 deduplicated inscriptions, 584 unique signs, 11,110 tokens.
+
+## S-0002 — Lin & Tegmark 2017 (MI-decay result; CLAIM-0002)
+
+- **Citation:** Lin, Henry W. & Tegmark, Max (2017). "Criticality in Formal Languages and
+  Statistical Physics." arXiv:1606.06737v3 [cond-mat.dis-nn] (v1 2016-06-21, v3 2017-08-23).
+  Published as "Critical Behavior in Physics and Probabilistic Formal Languages," *Entropy* 19,
+  299 (2017), per the paper's own p.1 footnote.
+- **URL:** https://arxiv.org/abs/1606.06737 (abs), https://arxiv.org/pdf/1606.06737v3 (PDF).
+  Journal version: https://www.mdpi.com/1099-4300/19/7/299 — **retrieval blocked this session
+  (HTTP 403, bot protection); journal-page license terms therefore unverified.** Verification
+  performed on the arXiv v3.
+- **Access date:** 2026-08-22 (abs page fetched; PDF pp. 1–4 read first-hand: abstract, Fig. 1,
+  §II incl. Theorem 1 and the HMM generalization).
+- **License:** arXiv.org perpetual non-exclusive license (per abs page) → **stored copy not
+  committed.** Local verification copy hashed at retrieval:
+  - SHA-256 `31c0b7798ceb75d53ecd2601420e648eb2cd7d10f1f42ab0aecda2c6e995eb93`
+    (1,744,340 bytes, `1606.06737v3` PDF).
+
+## S-0003 — Timm self-citation generator code release (CLAIM-0003)
+
+- **Citation (code):** Timm, Torsten (2019). *Self-citation text generator: Additional materials.*
+  GitHub, `TorstenTimm/SelfCitationTextgenerator`, default branch `master`, pinned at commit
+  `a6ede2202dd7ad6285ce2c007bf22c2a0e7709b7` (2019-11-29, last push). Zenodo DOI per README badge:
+  10.5281/zenodo.2531632. Contents include `source/`, `executable/`, `graphs/`, `gephi/`.
+- **URL:** https://github.com/TorstenTimm/SelfCitationTextgenerator
+- **Access date:** 2026-08-22 (repo metadata, file listing, README, and LICENSE retrieved via
+  GitHub API this session; code itself not yet ingested).
+- **License:** **MIT** — confirmed from the repo's own `LICENSE` file ("MIT License, Copyright (c)
+  2019 Torsten Timm") and GitHub's license detection for this repo. (Quirk recorded: the README's
+  MIT badge hyperlinks to a different repo of the same author, `TorstenTimm/TestText` — the
+  in-repo LICENSE governs.) MIT permits reuse, modification, and redistribution with attribution
+  → wrapping or vendoring is license-clean when F2.1(iii) arrives.
+- **Associated paper (corroborated, not yet retrieved):** Timm, Torsten & Schinner, Andreas.
+  "A possible generating algorithm of the Voynich manuscript." *Cryptologia* 44(1), 2020,
+  DOI 10.1080/01611194.2019.1596999. Publisher abstract page returned HTTP 403 this session;
+  identity corroborated by the repo's subject matter and README. Full retrieval owed on first
+  substantive use (F0.2 "verify on first use").
