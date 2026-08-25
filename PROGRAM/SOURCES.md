@@ -73,3 +73,24 @@ notes that the copy is not committed.
   DOI 10.1080/01611194.2019.1596999. Publisher abstract page returned HTTP 403 this session;
   identity corroborated by the repo's subject matter and README. Full retrieval owed on first
   substantive use (F0.2 "verify on first use").
+
+## S-0004 — RFC 8785, JSON Canonicalization Scheme (ADR-0001 hashing dependency)
+
+- **Citation:** Rundgren, A., Jordan, B., Erdtman, S. (2020). "JSON Canonicalization Scheme (JCS)."
+  RFC 8785, Independent Submission, Informational, ISSN 2070-1721, June 2020.
+- **URL:** https://www.rfc-editor.org/rfc/rfc8785.txt (text), https://www.rfc-editor.org/info/rfc8785
+  (info page, per the document's own status section)
+- **Access date:** 2026-08-25 (text retrieved, HTTP 200, 41,879 bytes; §3.2.1 whitespace, §3.2.2.3
+  number serialization, §3.2.3 property sorting, and §3.2.4 UTF-8 generation read first-hand and
+  quoted into ADR-0001 D5).
+- **License:** "Copyright (c) 2020 IETF Trust and the persons identified as the document authors.
+  All rights reserved. This document is subject to BCP 78 and the IETF Trust's Legal Provisions
+  Relating to IETF Documents (https://trustee.ietf.org/license-info)" — quoted from the document's
+  Copyright Notice. The Trust Legal Provisions themselves were not retrieved this session, so
+  redistribution rights are **unverified** → **stored copy not committed** (public repo). Local
+  verification copy hashed at retrieval:
+  - SHA-256 `63d52294eb0e3f0014174288186d388b4ddbf2c67d1ce8af1d9726eb0c3ab240`
+    (41,879 bytes, `rfc8785.txt`). Re-retrievable from rfc-editor.org; RFC texts are immutable once
+    published, so any future copy can be checked against this digest.
+- **Role:** normative reference for `config_hash` canonicalization in ADR-0001 D5. Engineering
+  standard, not scholarship — no CLAIM depends on it.
