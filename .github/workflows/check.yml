@@ -1,0 +1,33 @@
+# FRIEDMAN gate in CI (ADR-0002): wraps scripts/check.sh, the same gate F9 means locally.
+# Never configure this as a *required* status check without confirming Actions can run
+# (machine history: billing suspensions produce 0-step failed jobs that look like red builds).
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the pinned toolchain (read from rust-toolchain.toml, never assumed)
+        run: |
+          CHANNEL="$(sed -n 's/^channel *= *"\(.*\)"/\1/p' rust-toolchain.toml)"
+          test -n "$CHANNEL"
+          rustup toolchain install "$CHANNEL" --profile minimal --component clippy,rustfmt
+          rustup show active-toolchain
+
+      - name: Cache cargo registry and target
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            engine/target
+          key: cargo-${{ runner.os }}-${{ hashFiles('engine/Cargo.lock', 'rust-toolchain.toml') }}
+
+      - name: Gate (fmt --check + cargo test + clippy -D warnings + lab verifier)
+        run: bash scripts/check.sh

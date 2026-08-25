@@ -1,0 +1,13 @@
+[package]
+name = "friedman-manifest"
+version = "0.1.0"
+edition = "2024"
+description = "FRIEDMAN corpus manifest types, hashes, and fidelity verdicts (ADR-0001)"
+publish = false
+
+[dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.151", features = ["float_roundtrip"] }
+serde_json_canonicalizer = "0.3.2"
+sha2 = "0.11.0"
+hex = "0.4.3"

@@ -1,0 +1,10 @@
+# Rust build output for the engine/ workspace (ADR-0002)
+engine/target/
+
+# Python caches — lab/ has zero result authority (F10)
+__pycache__/
+*.pyc
+
+# Corpus bodies are regenerable from manifest + engine commit + seed (F6); manifests ARE committed
+# (ADR-0002 D3). Golden fixtures for tests live under engine/**/tests/, never here.
+corpora/**/corpus.txt

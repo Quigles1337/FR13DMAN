@@ -94,3 +94,45 @@ notes that the copy is not committed.
     published, so any future copy can be checked against this digest.
 - **Role:** normative reference for `config_hash` canonicalization in ADR-0001 D5. Engineering
   standard, not scholarship — no CLAIM depends on it.
+
+## S-0005 — Rust dependency set of `engine/` (ADR-0002 D5; licenses recorded before ingestion)
+
+- **What:** every crate in `engine/Cargo.lock` at ADR-0002's commit. Source: crates.io.
+- **Access date:** 2026-08-25 (fetched by `cargo fetch`; licenses read from the crates.io index
+  metadata via `cargo info <crate>@<version>` the same day).
+- **Stored copies:** the local cargo registry cache (not committed). **Digests:** `Cargo.lock`
+  records the SHA-256 checksum of every `.crate` archive — that lockfile is the committed digest
+  record for this entry.
+- **Security audit:** `cargo audit` (cargo-audit 0.22.2, RustSec advisory DB, 1,226 advisories
+  loaded) on 2026-08-25 scanned the 25-crate lockfile and reported no advisories.
+- **Licenses (all permissive; SPDX expressions as published by each crate):**
+
+| Crate | Version | License | Role |
+|---|---|---|---|
+| serde | 1.0.229 | MIT OR Apache-2.0 | direct |
+| serde_json | 1.0.151 | MIT OR Apache-2.0 | direct (`float_roundtrip`) |
+| serde_json_canonicalizer | 0.3.2 | MIT | direct — RFC 8785 JCS (ADR-0002 D4) |
+| sha2 | 0.11.0 | MIT OR Apache-2.0 | direct |
+| hex | 0.4.3 | MIT OR Apache-2.0 | direct |
+| block-buffer | 0.12.1 | MIT OR Apache-2.0 | transitive (sha2) |
+| cfg-if | 1.0.4 | MIT OR Apache-2.0 | transitive |
+| const-oid | 0.10.2 | Apache-2.0 OR MIT | transitive (digest) |
+| cpufeatures | 0.3.0 | MIT OR Apache-2.0 | transitive (sha2) |
+| crypto-common | 0.2.2 | MIT OR Apache-2.0 | transitive (digest) |
+| digest | 0.11.3 | MIT OR Apache-2.0 | transitive (sha2) |
+| hybrid-array | 0.4.14 | MIT OR Apache-2.0 | transitive (digest) |
+| itoa | 1.0.18 | MIT OR Apache-2.0 | transitive (serde_json) |
+| libc | 0.2.189 | MIT OR Apache-2.0 | transitive (cpufeatures) |
+| memchr | 2.8.3 | Unlicense OR MIT | transitive (serde_json) |
+| proc-macro2 | 1.0.107 | MIT OR Apache-2.0 | transitive (serde_derive) |
+| quote | 1.0.47 | MIT OR Apache-2.0 | transitive (serde_derive) |
+| ryu-js | 1.0.3 | Apache-2.0 OR BSL-1.0 | transitive (serde_json_canonicalizer) — ECMAScript number formatting |
+| serde_core | 1.0.229 | MIT OR Apache-2.0 | transitive (serde) |
+| serde_derive | 1.0.229 | MIT OR Apache-2.0 | transitive (serde) |
+| syn | 3.0.4 | MIT OR Apache-2.0 | transitive (serde_derive) |
+| typenum | 1.20.1 | MIT OR Apache-2.0 | transitive (hybrid-array) |
+| unicode-ident | 1.0.24 | (MIT OR Apache-2.0) AND Unicode-3.0 | transitive (proc-macro2) |
+| zmij | 1.0.23 | MIT | transitive (serde_json) — float printing |
+
+- **Rule going forward:** a crate is added to `engine/` only after its license is appended to this
+  table (same session, same commit). Ambiguity → escalate to Al (F11).
