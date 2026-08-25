@@ -20,7 +20,7 @@
 
 | Criterion | Status | Evidence |
 |---|---|---|
-| F0.1 sweep report at `PROGRAM/SWEEP-2026-08.md` with F11 banner | **blocked on Al — file not found** | Session 2 escalation response said the report was at the repo root as `SWEEP-2026-08.md`; it is not in the working tree, not on `origin/main`, not in any ref or stash, and not in Desktop/Downloads/Documents or the KOBER root (searched 2026-08-25). F11 forbids reconstructing it; escalation kept open below |
+| F0.1 sweep report at `PROGRAM/SWEEP-2026-08.md` with F11 banner | **done** | Ferried by Al 2026-08-25 to the repo root; executor verified identity against Al's stated digest before moving (SHA-256 `6ba3eb341ba2ecd325b68eb31d4bfafcbb46a47e6669c4d98374ec771e56275c`, 35,207 bytes, LF-only UTF-8, no BOM — identical after `mv` and in the staged blob); F11 banner present at line 1 (*"F11 BANNER — MAP, NOT EVIDENCE"*), plus a ferry note at line 129 recording that the sweep's "publicly released" claim about Nair's generators is already superseded by S-0001. Committed Session 3 |
 | F0.2 CLAIM-0001..0003 resolved VERIFIED or honestly UNKNOWN with consequences | **done (core)** | all three VERIFIED 2026-08-22 (commits `6649990`, `bee91d9`; S-0001..S-0003). "Verify on first use" list (Miller/Li, Ferrer-i-Cancho, Takahashi & Tanaka-Ishii, Rugg) remains open by design |
 | F0.3 manifest schema ADR merged | **done** | ADR-0001 (`7288a49`, on `main`): JSON/I-JSON manifests, `friedman-tokens/1` corpus format, JCS config hash (S-0004), commanded+achieved+tolerance verdict, no timestamps, KOBER handshake = two files + version strings; hand-computed goldens (D6) re-derived by `lab/verify_adr0001.py` (`2e9bef0`) |
 | F0.4 scaffold (`engine/`, `lab/`, `corpora/`, `gallery/`, `quarantine/` + F8 README, CI) | open | `lab/` exists with one script (created for ADR-0001's verifier; not the scaffold). Everything else unbuilt |
@@ -33,14 +33,10 @@
 
 ## Standing escalations (awaiting Al)
 
-- **F0.1 — founding sweep report: NOT FOUND where stated.** Al's Session-2 response placed it at
-  the repo root as `SWEEP-2026-08.md`. On 2026-08-25 the executor found no such file in
-  `C:\Users\LEET\FR13DMAN`, on `origin/main`, in any ref/stash, or in Desktop / Downloads /
-  Documents / the KOBER root. Under F11 the executor must not regenerate it. **Ask:** place the
-  file at `C:\Users\LEET\FR13DMAN\SWEEP-2026-08.md` (or commit it on `main`) and, if convenient,
-  state its byte size or SHA-256 so the executor can confirm it is the intended file before
-  moving it to `PROGRAM/SWEEP-2026-08.md` and applying/confirming the *map, not evidence (F11)*
-  banner. If Al has already applied the banner, the executor will verify rather than re-apply.
+- none. (F0.1 sweep-report escalation, open since Session 1, **CLOSED 2026-08-25 Session 3**:
+  file ferried by Al, digest-verified, committed at `PROGRAM/SWEEP-2026-08.md` with the F11
+  banner. Standing rule unchanged: the sweep is a map, not evidence — nothing enters SOURCES.md
+  or CLAIMS.md from it.)
 
 ## NEXT-SINGLE-ACTION
 
