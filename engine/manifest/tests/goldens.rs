@@ -305,6 +305,13 @@ fn d4_verdict_rule() {
         statistic_verdict(&rel, Some(&ach(Some(json!(-2.26))))),
         Verdict::Fail
     );
+    // ADR-0004 vector: rel 0.1 at -2.2 vs -2.0 FAILs (0.20000000000000018 > 0.2). The full vector
+    // table lives in ADR-0004; lab/verify_adr0001.py §6 runs the same seven cases in Python.
+    let rel_tenth = cmd(json!(-2.0), Tolerance::Rel { rel: 0.1 });
+    assert_eq!(
+        statistic_verdict(&rel_tenth, Some(&ach(Some(json!(-2.2))))),
+        Verdict::Fail
+    );
 
     let exact = cmd(json!("power_law"), Tolerance::Exact { exact: true });
     assert_eq!(

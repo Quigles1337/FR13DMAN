@@ -131,6 +131,22 @@ def keys_sorted(o):
 check("example manifest keys are in JCS order (recursively)", keys_sorted(man))
 check("no timestamp field", not any("time" in k or "date" in k or "created" in k for k in man))
 
+# 6. ADR-0004 D1 conformance vectors: verdict arithmetic in binary64 with `<=`, identical to the
+#    engine test `d4_verdict_rule`. Python floats are binary64 and CPython does not fuse ops.
+VECTORS = [
+    (-1.0, -1.125, ("abs", 0.125), True),
+    (-1.0, -1.1, ("abs", 0.1), False),
+    (-1.0, -1.11, ("abs", 0.1), False),
+    (-2.0, -2.25, ("rel", 0.125), True),
+    (-2.0, -2.2, ("rel", 0.125), True),
+    (-2.0, -2.2, ("rel", 0.1), False),
+    (-2.0, -2.26, ("rel", 0.125), False),
+]
+for c, a, (kind, t), expected in VECTORS:
+    got = abs(a - c) <= t if kind == "abs" else abs(a - c) <= t * abs(c)
+    check(f"ADR-0004 vector c={c} a={a} {kind}={t} -> {'PASS' if expected else 'FAIL'}", got == expected)
+check("ADR-0004 boundary example is binary64-inclusive, not decimal", abs(-1.1 - -1.0) == 0.10000000000000009)
+
 print()
 print("RESULT:", "ALL PASS" if not fails else f"{len(fails)} FAIL -> {fails}")
 sys.exit(1 if fails else 0)
