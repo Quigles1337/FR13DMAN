@@ -221,3 +221,125 @@ ESCALATIONS:
 - (F0.1 sweep-report escalation CLOSED this session.)
 STOP-REASON: natural boundary — F0.4 complete and green; the remaining Gate F0 criterion is the
 cold-start test, which this session is constitutionally unable to run on its own work.
+
+---
+
+SESSION: 2026-08-25 (Session 4 — Gate F0 cold-start exam attempt under Al's memory-discipline
+rule; SHA at session end recorded at the bottom of this entry)
+
+RECALLED MEMORY — DISCLOSED VERBATIM FIRST, BEFORE ANY OTHER ACTION (Al's exam-integrity rule):
+
+1. The executor's memory index (`MEMORY.md`, 90 lines, 27 sections) is loaded automatically at
+   every session start. Two sections concern this program or its sibling; they are reproduced
+   verbatim below. The other 25 sections concern unrelated private programs, contain no FRIEDMAN
+   state, and are withheld from this public repository (Al can inspect them on the machine).
+
+   MEMORY.md, section "## KOBER (Linear A falsification infrastructure)":
+   > - [Repo pointer + session discipline](project_kober.md) — `C:\Users\LEET\KOBER`, branch `master`, remote `Quigles1337/KOBER` (**public**); constitution `PROGRAM/KOBER-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory; Sessions 1–3 (2026-08-22) built Phase 0; **Session 4 (2026-08-25): cold-start PASSED, G0 CLOSED, Phase 1 open at tip `0e1ac18`, CI green; next = P1.1 per STATE.md NEXT-SINGLE-ACTION**; CLAIM-0005/0006 sequencing caveat recorded (may need Al's §2 ADR).
+
+   MEMORY.md, section "## FR13DMAN (FRIEDMAN — designedness-detection instrument)":
+   > - [Repo pointer + session discipline](project_friedman.md) — `C:\Users\LEET\FR13DMAN` / `Quigles1337/FR13DMAN` (**public**, leetspeak name), branch `main`; KOBER's sibling program; constitution `PROGRAM/FRIEDMAN-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory; Session 1 (2026-08-22): bootstrap + CLAIM-0001..0003 all VERIFIED; Session 2 (2026-08-25): F0.3 DONE (ADR-0001 manifest schema); Session 3 (2026-08-25): **F0.1 + F0.4 DONE** — sweep committed digest-verified, ADR-0002 toolchain 1.91.0 + `engine/` workspace + `friedman-manifest` crate (16 tests, RFC 8785 vectors) + `scripts/check.sh` gate + CI green, main `f992a78`; **next: Gate F0 cold-start test by a fresh session**, then F1.1; **escalation open: repo LICENSE file (Al)**; shell-heredoc/sed-escape hazards recorded in the memory file.
+
+2. The memory file `project_friedman.md` that the index points to (body, verbatim; frontmatter
+   omitted — it holds only name/description/type/timestamps):
+   > **FRIEDMAN** — calibrated instrument for designedness detection: dialable meaning-shaped-noise
+   > generators + detector battery scored as ROC/AUC vs corpus size; deliverable = the fooling
+   > frontier. Repo: `C:\Users\LEET\FR13DMAN` (**leetspeak name, not FRIEDMAN**), branch `main`
+   > (sibling KOBER uses `master`), remote `https://github.com/Quigles1337/FR13DMAN` (**public**,
+   > created + designated by Al 2026-08-22). Session 1 ran 2026-08-22: bootstrap + F0.2 core —
+   > CLAIM-0001..0003 all VERIFIED (Nair 2026 arXiv:2604.17828 confirmed percentile-scorecard-no-ROC;
+   > Lin & Tegmark Theorem 1; Timm generator MIT). Session 2 ran 2026-08-25: **F0.3 COMPLETE** —
+   > ADR-0001 manifest schema (JSON/I-JSON, `friedman-tokens/1` corpus format, RFC 8785 JCS config
+   > hash = S-0004, commanded+achieved+tolerance verdict, no timestamps, KOBER handshake D7) at
+   > `7288a49`, verifier `lab/verify_adr0001.py` (35 checks) at `2e9bef0`, main `873e94b` pushed.
+   > Session 3 (2026-08-25): **F0.1 DONE** (Al ferried the sweep with a stated SHA-256, verified
+   > before the move, `6c97b53`; escalation CLOSED) and **F0.4 DONE** (ADR-0002 at `27dd471`:
+   > `rust-toolchain.toml` 1.91.0 + edition 2024, `engine/` workspace, crate `friedman-manifest`
+   > with 16 tests incl. RFC 8785 §3.2 sample bytes + all Appendix B rows — `serde_json_canonicalizer`
+   > 0.3.2 VERIFIED, `scripts/check.sh` gate, CI `check.yml` green on first run, S-0005 = 24 crate
+   > licenses). Main `f992a78`. **Next per STATE.md: Gate F0 cold-start test by a FRESH session**
+   > (then F1.1 R1 Zipf collapse, starting with Miller/Li retrieval). **Open escalation: repo has no
+   > LICENSE file — Al's call.** Gotcha: ADR-0001 D4 verdict boundary is binary64-inclusive
+   > (|−1.1−(−1.0)| > 0.1 → FAIL) — ADR-0002 D8.
+   >
+   > **Standing rule:** the repo is the program's only memory (§0.5 of its constitution,
+   > `PROGRAM/FRIEDMAN-PROGRAM.md`). Every session: read the constitution, then run the §4 loop from
+   > `PROGRAM/STATE.md` / `PROGRAM/HANDOFF.md`. Never resume from this memory file — it only locates
+   > the repo. FRIEDMAN never issues verdicts on contested artifacts (§0.2 hard invariant). Never work
+   > in the sibling [[project-kober]] tree — identical `PROGRAM/` schema, and its sessions may be live
+   > concurrently (one was, during FRIEDMAN Session 1).
+   >
+   > Machine gotchas that hit this program: MDPI and Taylor & Francis 403 plain tool fetches; arXiv
+   > and the GitHub API work fine; arXiv nonexclusive-licensed PDFs are hashed but NOT committed (repo
+   > is public); LF pinned via committed `.gitattributes` (CRLF-vs-digest trap, same as KOBER).
+   > Session-2 shell hazards in this harness: long `cat <<'EOF'` heredocs fail to parse; `sed -i` and
+   > `python -c` replacement strings turn `\r`/`\xef` escapes into raw bytes (a broken line got
+   > committed once) — write multi-line files with the Write/Edit tools, then verify by script; a
+   > `grep` inside an `&&` chain is NOT a guard (a match exits 0). Deep `find` over the home dir hangs
+   > on OneDrive reparse points (120 s timeout) — search specific dirs with `-maxdepth`.
+   > `git symbolic-ref refs/remotes/origin/HEAD` may fail until `git fetch`; fallback
+   > `git remote show origin`.
+
+3. **Larger than any memory file:** this session is running in the *same conversation context*
+   that executed Sessions 2 and 3. The executor holds those sessions' full transcripts — every
+   file written, every command run — not a summary. STATE.md's own NEXT-SINGLE-ACTION says the
+   cold-start test "must be run by a session that did not build this state."
+
+EXAM VERDICT (stated before ORIENT so it cannot be shaped by what ORIENT finds): **this attempt
+does not count.** Both of Al's disqualifiers hold — the recalled memory contains program state
+(phase, gate rows, commit SHAs, next action, open escalation), and the session is not cold. Gate
+F0 stays OPEN. What follows is a *warm rehearsal* of the §4.1 procedure: it can find doc gaps and
+verify build/CI/evidence claims, and those findings are real; it cannot close the gate.
+
+SESSION SHA: 91faff1 (the commit adding the rest of this entry + the STATE update lands on top)
+PHASE / GATE: F0 — FOUNDATION / Gate F0 open; cold-start test NOT passed (attempt disqualified)
+ADVANCED:
+- Warm rehearsal of the exam procedure, every step from the repo: §4.1 commands all resolve
+  (`origin/HEAD` → `main` without the fallback this time); STATE → HANDOFF → CLAIMS → ADRs read;
+  `bash scripts/check.sh` ALL GREEN at `f992a78` (16/16, clippy, fmt, verifier); CI `check`
+  `success` for `main`'s tip `f992a78` (run 32886443172); all seven SHAs cited in the STATE
+  table are ancestors of `origin/main`; `PROGRAM/SWEEP-2026-08.md` digest `6ba3eb34…`, 35,207
+  bytes, banner line 1, ferry note line 129 — all as stated; every F0.4 file exists; S-0004's
+  RFC 8785 digest `63d52294…` reproduces from the URL today; S-0001's digest string is present.
+  **Points where the repo alone was insufficient: none found** — but found by a warm reader,
+  which is exactly why this does not count.
+- ADR-0003 (`c1fc6f0`, ratified by Al): memories hold environment/tooling hazards only, never
+  program state; exam sessions disclose recalled memory verbatim first; no memory writes in exam
+  sessions. Executor corollary (same-conversation sessions are not cold) recorded as unratified.
+- ADR-0004 (`a3f42d2`, ratified by Al): D4 verdict arithmetic pinned to binary64, `<=`, no
+  FMA/decimal/rational path; seven conformance vectors now identical in Rust (`d4_verdict_rule`,
+  one vector added) and Python (`lab/verify_adr0001.py` §6, nine checks added). Gate ALL GREEN.
+- `.github/workflows/check.yml`: actions/checkout and actions/cache bumped v4 → v5 (`91faff1`);
+  both v5 tags verified via the GitHub API first (latest majors are v7.0.1 / v6.1.0 — Al asked
+  for v5, v5 applied). CI result for this push is recorded by the next session at ORIENT.
+BELIEF DELTAS:
+- Session-start me had written "must be run by a session that did not build this state" into
+  STATE and then received an instruction to run it. The instruction and the rule cannot both be
+  satisfied from inside this conversation; the honest resolution was to disclose, disqualify,
+  and still do the verification work. Evidence: the disclosure block above, written before ORIENT.
+- The memory index is loaded before the executor can act, so a purge cannot be part of the exam
+  session — it has to be a separate act. This is a sequencing fact I did not see until writing
+  ADR-0003's consequences.
+CONFUSIONS:
+- Relative path `scripts/check.sh` after a `cd engine` produced *no output* because the error
+  went to a filtered pipe (`2>&1 | grep`). Cost: one call. Lesson: absolute paths, and never
+  filter a command whose failure you would need to see.
+HONESTY CHECK: no CLAIM transitions. The exam verdict was written down before ORIENT so the
+rehearsal's clean result could not tempt an upgrade. ADR-0003's corollary is labelled unratified
+rather than folded into the ratified text. Nothing entered any register from memory or the
+sweep; the memory disclosure is quoted, not summarized. No downgrades needed.
+LEAKAGE CHECK: checked, not assumed — decisions this session were ADR-0003 (process) and
+ADR-0004 (arithmetic); neither cites any corpus. `quarantine/` is still empty. No leakage.
+DETERMINISM CHECK: no MEASURED/REPRODUCED results. New conformance vectors are fixed binary64
+values; both tiers compute them from the same JSON literals. Nothing to quarantine from CLAIMS.
+DRIFT CHECK: no verdict creep; no demo drift; no detector-shopping. The one temptation this
+session was gate-shopping — closing F0 on a rehearsal that came out clean — and it was refused.
+NEXT-SINGLE-ACTION: see STATE.md — memory purge (Al / dedicated purge session) THEN the Gate F0
+cold-start exam by a fresh session in a new conversation under ADR-0003; fully specified there.
+ESCALATIONS:
+- Memory purge per ADR-0003 (this session was told not to write memories, so it did not).
+- ADR-0003 executor corollary — ratify or strike.
+- Repository LICENSE file (carried from Session 3).
+STOP-REASON: blocker requiring Al — the gate's remaining criterion cannot be satisfied from this
+conversation, and the precondition for a valid attempt (memory purge) is a memory write this
+session was told not to perform. Default branch green.
