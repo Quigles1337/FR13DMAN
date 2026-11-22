@@ -700,3 +700,389 @@ ESCALATIONS:
   line says.
 STOP-REASON: blocker requiring Al — the next action is an exam that only a cold session can run,
 and only Al can launch one. Default branch green.
+
+---
+
+SESSION: 2026-11-22 UTC @ edcee64 (Session 7 — the Gate F0 cold-start exam: a new conversation
+launched with the §6 Session-N prompt and nothing else. This header was provisional until
+orientation and was completed after it; the disclosure below is as it was first appended. The
+commit carrying this block and the STATE update lands on top of `edcee64`)
+
+MEMORY DISCLOSURE (ADR-0003, D2 as amended by Amendment 1). First entry of this block.
+Appended by script at 2026-11-22T07:45:41Z, before any action except reading
+`PROGRAM/FRIEDMAN-PROGRAM.md` and `PROGRAM/DECISIONS/ADR-0003.md` in full and reading the memory
+disclosed here. This file's existing contents were not read: the script opens it for appending
+only.
+
+1. **What the harness loaded.** One memory index, `MEMORY.md`, put into the session's context at
+   the start, from the directory the harness named:
+   `C:\Users\LEET\.claude\projects\C--Users-LEET\memory\`. That directory is the one store. The
+   session has opened no other store.
+2. **Index lines that name FRIEDMAN, FR13DMAN, KOBER or SYNDEOM, in any letter case:** 6 of the
+   index's 124 lines. Copied from the file by script, not typed. Before appending, the script
+   compared them with the same lines as they stand in the session's context (typed into the
+   script for that comparison only, trailing whitespace ignored); it stops without appending if
+   they differ. They did not differ.
+
+```text
+## KOBER (Linear A falsification infrastructure)
+- [Repo pointer + machine hazards](project_kober.md) — `C:\Users\LEET\KOBER`, remote `Quigles1337/KOBER` (**public**); the constitution `PROGRAM/KOBER-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (memory-policy ADR).
+## FR13DMAN (FRIEDMAN — designedness-detection instrument)
+- [Repo pointer + machine hazards](project_friedman.md) — `C:\Users\LEET\FR13DMAN` / `Quigles1337/FR13DMAN` (**public**, leetspeak name); sibling of KOBER; the constitution `PROGRAM/FRIEDMAN-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (ADR-0003).
+## SYNDEOM (AI-proof calibration — third sibling of KOBER/FRIEDMAN)
+- [Repo pointer + machine hazards](project_syndeom.md) — `C:\Users\LEET\Syndeom` / `Quigles1337/Syndeom` (**public**); the constitution `PROGRAM/SYNDEOM-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (SD15 / FR13DMAN ADR-0003).
+```
+
+3. **This program's own memory file,** `project_friedman.md`, in the same store. The session
+   opened it before disclosing (once with the harness's file reader, once by this script).
+   Reproduced whole, 42 lines, copied from the file by script:
+
+```text
+---
+name: project-friedman
+description: "FRIEDMAN program - repo C:\\Users\\LEET\\FR13DMAN (note leetspeak name); constitution and ALL program state live IN the repo, never here"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 2d23bdef-ec96-488e-8ec2-3c934065c2bc
+  modified: 2026-08-25T18:54:35.958Z
+---
+
+**FRIEDMAN** - repo `C:\Users\LEET\FR13DMAN` (**leetspeak name, not FRIEDMAN**), remote
+`https://github.com/Quigles1337/FR13DMAN` (**public**).
+
+This file locates the repo and records machine hazards. Per ADR-0003 it records NO program
+state: no phase, gate, claims, commits, toolchain versions, escalations, or next actions.
+
+**Standing rule:** the repo is the sole memory of the program (constitution at
+`PROGRAM/FRIEDMAN-PROGRAM.md`). Every session: read the constitution, then run the section 4
+loop from `PROGRAM/STATE.md` and `PROGRAM/HANDOFF.md`. Never resume from this file. Discover
+the default branch, toolchain, and every other value from the repo - never assume one, and
+never carry a value across from the sibling program.
+
+**Hard invariant (kept deliberately; a standing prohibition, not state):** FRIEDMAN never
+issues verdicts on contested artifacts.
+
+**Never work in the sibling KOBER tree** - identical `PROGRAM/` schema, and its sessions may
+be live concurrently.
+
+Machine and harness hazards:
+- MDPI and Taylor & Francis return 403 to plain tool fetches; arXiv and the GitHub API work.
+- Long heredocs fail to parse in this harness, and a bare `cat > file` with no heredoc blocks
+  on open stdin (cost a 10-minute timeout). Write multi-line files with the Write/Edit tools;
+  pass commit messages via `-F file`.
+- `sed -i` and `python -c` replacement strings turn backslash-r and backslash-xef escapes into
+  raw bytes; a broken line got committed once this way.
+- A `grep` inside an && chain is NOT a guard - a match exits 0.
+- Deep `find` over the home dir hangs on OneDrive reparse points (120 s timeout); search
+  specific dirs with `-maxdepth`.
+- `git symbolic-ref refs/remotes/origin/HEAD` may fail on a working copy that was init-ed then
+  remote-added; fallback `git remote show origin`, or repair with `git remote set-head origin -a`.
+- This machine has autocrlf active and MSYS grep reports false carriage returns; CRLF conversion
+  can silently break byte digests. Verify line endings with `git ls-files --eol`, never by eye.
+```
+
+4. **Withheld.** The script counts the index's lines as the pieces between line feeds, not
+   counting the empty piece after the last one: 124. 6 are reproduced above. The other 118 are
+   withheld under R3: 37 of them are blank and 81 are not. The session's reading, not a
+   script's: none of the withheld lines names or describes this program.
+5. **Bytes.** Carriage returns stripped from the copied lines: 0 in the index, 0 in the
+   program's file. Byte-order marks stripped: 0 and 0. Nothing else in a copied line was
+   changed.
+6. **Other memory files.** The index links other files in the store, `project_kober.md` and
+   `project_syndeom.md` among them. The session has opened none of them, and it will open no
+   memory file that this disclosure does not cover.
+7. **Memory writes.** None so far. None will be made in this session.
+8. **Launch (not memory; recorded because R1 defines a cold session by its launch).** The
+   launching message held the §6 Session-N prompt as one paste and no other words; the session
+   compared it with §6 by reading, not by script, and found no difference. The harness started
+   the session in `C:\Users\LEET`, which it reports is not a git repository. Besides the memory
+   index, the context at launch held the harness's own instructions, its tool and skill lists,
+   and its account and commit-attribution notes; as the session reads them, none names this
+   program.
+9. **Whether any recalled line is program state** is read after orientation, further down this
+   block, so that the reading can be checked against the state the repo holds.
+
+STANDING (STATE, NEXT-SINGLE-ACTION, step (0)). Appended by script at 2026-11-22T07:49:37Z, after the
+§4.1 commands and after reading `PROGRAM/STATE.md`, which is where the session learned that it
+is the Gate F0 cold-start exam and that this step exists. Nothing above this line was changed.
+
+- **(a) The launching message, verbatim.** Copied by script from the harness's record of this
+  conversation (its first `user` record, timestamp 2026-11-22T07:42:39.624Z), not typed. The harness
+  delivered Al's text inside a paste wrapper. The text between the wrapper's tags:
+
+```text
+Before anything else, make the memory disclosure that ADR-0003 requires: read
+PROGRAM/FRIEDMAN-PROGRAM.md and PROGRAM/DECISIONS/ADR-0003.md in full, read the executor memory they
+tell you to disclose, and append the disclosure as the first entry of a new block at the end of
+PROGRAM/HANDOFF.md, whether or not this session will attempt a gate's cold-start test, and with no
+other command or file read first. Append it without reading HANDOFF's existing contents (a shell
+append or a script, not a file-editing tool that reads the file first), under a provisional block
+header that carries the UTC date and that you complete after orientation without changing the
+disclosure. You are the executor of the FRIEDMAN program. Having disclosed, run the metacognitive
+loop (§4) exactly: ORIENT from the repo (state files are claims; builds are evidence), ASSESS, PLAN
+one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5 schema — including
+the LEAKAGE, DETERMINISM, and DRIFT checks — and stop clean per §4.6. Honor escalations — some
+decisions are Al's, not yours.
+```
+
+  Outside the wrapper the record's message holds 3 characters; all of them whitespace: yes.
+- **(b) Compared with §6, by script.** Against the fenced Session-N block in §6 of
+  `PROGRAM/FRIEDMAN-PROGRAM.md` as it stands in the working tree: identical character for
+  character once surrounding whitespace is trimmed: yes. Identical with every run of whitespace
+  reduced to one space: yes. The message carries nothing beyond §6's text: true.
+- **(c) Prior turns.** None. The record's first `user` record is the launching message: it has no
+  parent record (`parentUuid` null) and the harness numbers it prompt 1, turn 1. The 4 records
+  before it in the file are of types `mode`, `permission-mode`, `session-owner`,
+  `file-history-snapshot`; none is a user or assistant message.
+- **(d) What the harness attached to that turn.** Attachment records between the launching message
+  and the session's first reply, by the harness's type name, one of each: `agent_listing_delta`,
+  `credential_org`, `date`, `deferred_tools_delta`, `environment`, `instructions`,
+  `mcp_instructions_delta`, `model`, `prompt_snapshot`, `remote_session_change`,
+  `session_context`, `skill_listing`. The memory index is in the `instructions` and
+  `prompt_snapshot` attachment; it is reproduced only as D2 allows, in the disclosure above. The
+  session reproduces no other attachment. The record gives the launch directory as
+  `C:\Users\LEET`.
+- **(e) The disclosure order.** The session's tool calls up to and including the append, listed
+  by script from the record (`<scratch>` stands for the harness's scratch directory):
+  1. Read `C:\Users\LEET\FR13DMAN\PROGRAM\FRIEDMAN-PROGRAM.md`
+  2. Read `C:\Users\LEET\FR13DMAN\PROGRAM\DECISIONS\ADR-0003.md`
+  3. Read `C:\Users\LEET\.claude\projects\C--Users-LEET\memory\project_friedman.md`
+  4. Write `<scratch>\disclose.py`
+  5. Bash `python "<scratch>/disclose.py"; echo "rc=$?"`
+  Two things about that list, in the session's own words. First, the script was written to
+  the scratch directory before it ran: a file written, not a command and not a file read, and
+  the prompt itself asks for "a shell append or a script". Second, the script asked the file
+  system whether `PROGRAM/HANDOFF.md` exists and what its size was before and after the append
+  (55552 and 62142 bytes). It read none of the file's bytes, but the size is a fact about the
+  file that the session had before it had disclosed, and it was not needed. The session reads
+  neither as a command or file read outside what the prompt allows. Al may read the second
+  differently: a breach of the disclosure order is his to judge, and it is carried to
+  ESCALATIONS at the end of this block so that he sees it.
+- **(f) Is any disclosed memory program state? The session's reading: no.** ADR-0003 D1 lists
+  program state as phase, gate status, CLAIM statuses, file contents, commit SHAs as state
+  markers, next actions and escalations. Checked against `PROGRAM/STATE.md` as just read: the
+  six index lines and the 42-line file hold no phase, no gate status, no CLAIM, no commit SHA,
+  no next action and no escalation. What they hold is the repo's path and remote, pointers to
+  the constitution and to ADR-0003 by name, the rule never to resume from memory, and eight
+  machine hazards. The closest calls, named so that Al can overrule the reading:
+  1. The remote is called "public". The session reads that as part of the repo's location;
+     ADR-0003's Amendment 1, which the prompt orders read first, says the same.
+  2. The file restates one sentence of the constitution (§0.2, no verdicts on contested
+     artifacts) and says it keeps it deliberately. Strictly that is file contents. It is a
+     rule that does not move with the program's progress, and the prompt orders the
+     constitution read in full before the memory.
+  3. The file's front matter carries a harness session identifier and a last-modified time of
+     2026-08-25. Neither is a state marker in this repo; the session has not looked the
+     identifier up and will not.
+  4. Three hazards imply history: a broken line "got committed once", this working copy was
+     "init-ed then remote-added", and two publishers answer 403. D1 allows hazards and names
+     fetch behaviour among them; none of the three says what the program's state is.
+- **(g) Conversation context (R1).** This conversation did not build the state under test. Its
+  first record is the launching message above. At ORIENT `main`'s tip was `edcee64`, committed
+  2026-11-22T01:52:07-05:00, before this conversation began, and `git status` showed one change:
+  this session's own append to this file.
+- **(h) Standing: NOT DISQUALIFIED, by the session's reading.** The exam goes on at step (1). The
+  readings Al may overrule are in (e) and (f).
+
+CORRECTION to STANDING (e), appended later in the session; (e) itself is left as written. Its
+sentence "the size is a fact about the file that the session had before it had disclosed" says
+more than happened. The script took the size before it appended and printed it only after the
+append was written: the number reached the session in the same output that confirmed the append.
+The script had it before the disclosure was in the file; the session did not. The existence test
+is as (e) says.
+
+EXAM RECORD — the Gate F0 cold-start test, steps (1) to (5) of STATE's NEXT-SINGLE-ACTION as it
+stood at `edcee64`. Step (0) is STANDING, above.
+
+- **(1) ORIENT.** §4.1 as listed. Top level `C:/Users/LEET/FR13DMAN`; `origin` =
+  `https://github.com/Quigles1337/FR13DMAN.git`; branch `main` at `edcee64`, up to date with
+  `origin/main`, and `git ls-remote origin refs/heads/main` gives the same SHA;
+  `git symbolic-ref refs/remotes/origin/HEAD` → `refs/remotes/origin/main` without the fallback;
+  `git status` showed `PROGRAM/HANDOFF.md` modified by this session's append and nothing else
+  (`engine/target/` is ignored); no stash, no tag. Read, in this order: STATE; then, after step
+  (0), HANDOFF Session 6, and Session 5 for how an earlier exam recorded itself; CLAIMS (three
+  entries, all VERIFIED); ADR-0000, 0001, 0002 and 0004 in full (ADR-0003 with its Amendment 1
+  was read before the disclosure); SOURCES (S-0001 to S-0005); the scaffold files step (3) names.
+  The state those gave: Phase F0; five of Gate F0's six rows done with evidence, the sixth — this
+  test — open; no blocker the executor can clear; the licence ruled (R6) and waiting for Al's
+  request after the gate closes; next action, this exam. STATE and the repo disagreed nowhere.
+- **(2) Build.** `bash scripts/check.sh` → `ALL GREEN` at `edcee64` with this session's append in
+  the tree: rustc and cargo 1.91.0 from the pin; fmt clean; 16/16 tests; clippy `-D warnings`
+  clean; verifier `RESULT: ALL PASS`, which covers "no carriage return and no byte-order mark in
+  any `PROGRAM/` file", this one with its new block included. CI:
+  `gh run list -R Quigles1337/FR13DMAN --branch main --limit 3` → `check` `success` for the tip
+  `edcee64` (run 44995657251, a push event, 2026-11-22T06:52:14Z; one job, `gate`, 8 steps, all
+  successful), and `success` for `7c3e5dd` (run 32890045263) and `766a095` (run 32888642294).
+- **(3) Evidence links, row by row.**
+  - *Commits.* The ten 7-hex SHAs STATE cites (`27dd471` `2e9bef0` `6649990` `6c97b53` `7288a49`
+    `766a095` `7c3e5dd` `91faff1` `a3f42d2` `bee91d9`; the list was taken from STATE by script) are
+    each an ancestor of `main`'s tip (`git merge-base --is-ancestor`), with the subjects STATE
+    implies. So are `c1fc6f0` (ADR-0003) and `edcee64`.
+  - *F0.1.* `PROGRAM/SWEEP-2026-08.md`: SHA-256
+    `6ba3eb341ba2ecd325b68eb31d4bfafcbb46a47e6669c4d98374ec771e56275c` for the working-tree file,
+    for the blob at `HEAD` and for the blob at `6c97b53`; 35,207 bytes; valid UTF-8; no carriage
+    return; no byte-order mark; the F11 banner is line 1 and the ferry note is line 129.
+  - *F0.2.* CLAIM-0001, 0002 and 0003 are VERIFIED, each with its S- entry. CLAIM-0003's
+    transition and S-0003 are in `bee91d9`, whose subject names only CLAIM-0002 (`git log -S`),
+    so the two commits STATE cites cover all three. Re-fetched today and hashed, not opened: the
+    S-0001 PDF (749,585 bytes) and the S-0002 PDF (1,744,340 bytes); both SHA-256 digests equal
+    SOURCES. S-0003's upstream is still at `a6ede2202dd7ad6285ce2c007bf22c2a0e7709b7`, last
+    pushed 2019-11-29, licence MIT (GitHub API).
+  - *F0.3.* ADR-0001 and `lab/verify_adr0001.py` are in the tree, and the commits STATE cites for
+    them are on `main`; the engine's `d6_*` tests enforce the ADR's goldens. ADR-0004's seven
+    conformance vectors are the same
+    seven in the Rust test `d4_verdict_rule` and in `lab/verify_adr0001.py` §6 — compared by
+    reading the three, not by script — and both suites pass.
+  - *F0.4.* `rust-toolchain.toml` = `1.91.0` + clippy + rustfmt. `engine/Cargo.toml` is a
+    workspace with the one member `manifest`; the crate is `friedman-manifest`, edition 2024,
+    `publish = false`. `engine/manifest/tests/goldens.rs` holds 16 `#[test]` functions and
+    `RFC_APPENDIX_B` holds 24 rows (both counted by script). `scripts/check.sh` is the gate
+    ADR-0002 D6 describes. The workflow uses `actions/checkout@v5` and `actions/cache@v5` and
+    reads the toolchain from the file. `corpora/`, `gallery/` and `quarantine/` each hold a README
+    and nothing else. The F8 quotation in `quarantine/README.md` equals the constitution's F8
+    (script; whitespace-normalized; 544 characters). `.gitignore` and `.gitattributes` are as
+    ADR-0002 D7 and ADR-0000 say. `git ls-files --eol`: all 26 tracked files `i/lf w/lf`. `main`
+    has no branch protection and the repository no ruleset (GitHub API: "Branch not protected";
+    `[]`), so the workflow is not a required check.
+  - *Licences.* The S-0004 digest reproduces from its URL
+    (`63d52294eb0e3f0014174288186d388b4ddbf2c67d1ce8af1d9726eb0c3ab240`, 41,879 bytes). The S-0005
+    table equals `engine/Cargo.lock`'s 24 registry crates by name and version (script), and the
+    lockfile carries 24 checksums. `cargo audit` → exit 0 over the 25-crate lockfile, 1,555
+    advisories loaded. There is no `LICENSE` file, no crate has a `license` field, and GitHub
+    reports the repository public with no licence: as R6 rules it until the licence ADR.
+  - *Observed alongside.* Python 3.11.9; `gh` 2.74.0 logged in as Quigles1337; cargo-audit
+    0.22.2; the constitution's SHA-256 is
+    `68e40defe9382dcab20781790fd7e57faf1d8df27ca05d83af6018f012bc0b26` at 22,022 bytes, as HANDOFF
+    Session 6 records for its commit. The first 55,552 bytes of this file equal `HEAD`'s copy of
+    it (SHA-256 compared): the append changed nothing above it.
+- **(4) Points where the repo alone was insufficient.** No value of program state was guessed,
+  and none was taken from memory. In four places the repo did not say how to do a thing; they
+  are listed so that Al can weigh them.
+  1. *Finding the repo.* The session was started in `C:\Users\LEET` and the prompt's paths are
+     relative to the repo. The session took the repo's location from the memory index's line for
+     this program. ADR-0003 D1 allows memory to hold exactly that, and the launch directory is
+     not a condition of the exam. From the repository directory (R7) the question does not arise.
+  2. *The harness's record.* Step (0) asks for the launching message verbatim, and Session 6
+     copied Al's message "by script from the harness's record", but the repo does not say where
+     that record is. The session inferred the place from two things the harness had told it —
+     the memory directory, and the session identifier in the scratch directory's path — tried
+     that one file, and confirmed it by the session identifier inside it and by its first `user`
+     record. It opened that file only and listed nothing in the directory, which also holds the
+     records of earlier conversations. An inference about the harness, tested before use; not
+     program state.
+  3. *What a completed header is.* The prompt says the provisional header is completed after
+     orientation; nothing says what that looks like, and no earlier block had one. The session
+     replaced the one provisional line with a header in the §4.5 form and checked by script that
+     every other byte of the file was unchanged by that replacement.
+  4. *When step (0) is done.* It is numbered before ORIENT, and a session learns of it only from
+     STATE. The session ran the §4.1 commands, read STATE, did step (0), then read the rest.
+  STATE now carries a note on each of 2, 3 and 4, marked as the executor's.
+- **(5) Result: PASS.** In STATE, Gate F0 is marked CLOSED (2026-11-22 UTC, at `edcee64`), Phase
+  F1 is opened, and NEXT-SINGLE-ACTION is the F1.1 first step. The closing rests on this
+  session's own readings: STANDING (e), (f) and (h), and item (4) above. They are Al's to
+  overrule and are carried to ESCALATIONS. No memory was written (ADR-0003 D3).
+
+PHASE / GATE: at session start, F0 — FOUNDATION / Gate F0 open on the cold-start test alone. At
+session end, **Gate F0 CLOSED** (2026-11-22 UTC, at `edcee64`); F1 — REPRODUCTIONS / Gate F1
+open, nothing started.
+ADVANCED:
+- The memory disclosure, first, by script, before the session knew what kind of session it was
+  (top of this block).
+- Step (0): the launching message copied from the harness's record and compared with §6 by
+  script; no prior turn; standing recorded (STANDING). Counted by script when the exam's checks
+  were done: the record held one message of human origin, the launch, and 36 tool results. Al
+  sent nothing else during the session.
+- The Gate F0 cold-start test, passed (EXAM RECORD). Gate F0's last row has its evidence.
+- STATE rewritten for the result: Gate F0 closed and its table kept with what this session
+  added; Phase F1 opened with its gate table; the F1.3 obstacle that CLAIM-0001 already records
+  put in that table; NEXT-SINGLE-ACTION set to the F1.1 first step, as step (5) orders; the exam
+  procedure kept at the end of STATE, steps (0) to (5) byte for byte as Al accepted them (copied
+  by script), with four notes of this session's marked as the executor's; Al's rulings block
+  copied byte for byte.
+- No CLAIM moved. CLAIMS.md, SOURCES.md, the ADRs, the constitution and every file outside
+  `PROGRAM/STATE.md` and this file are untouched.
+BELIEF DELTAS:
+- Session-start me did not know this was the exam: the prompt is the same for every session, and
+  STATE is where it says so. The disclosure-first order did what R2 wanted — the disclosure was
+  in this file before the session had read a word of program state. Evidence: the tool-call list
+  in STANDING (e).
+- At the disclosure I believed the launching message could be compared with §6 only "by
+  reading" (item 8). The harness keeps a record a script can read, so step (0) did the
+  comparison by script and item 8's by-reading result is superseded by it, not contradicted.
+- I wrote in STANDING (e) that the session had the file's size before it disclosed. Reading my
+  own script again, it printed the size after the append. Evidence: the script takes the size,
+  writes, then prints. Corrected above.
+- The memory index is no longer the 90-line file Session 5 disclosed: it is 124 lines and has a
+  SYNDEOM section, which R3's four names cover. The body of the program's own memory file is
+  unchanged from the text Session 5 reproduced: the 32 body lines in Session 5's block equal the
+  32 in this block (script, over this file).
+- The pinned digests hold three months on. arXiv can re-render a versioned PDF; it has not
+  re-rendered these two. The advisory database grew from 1,226 to 1,555 entries and still names
+  nothing in the lockfile.
+- Session 6's inference that a session launched from the repository directory would be given a
+  different memory store, or none, is still untested: this session was launched from
+  `C:\Users\LEET` and was given the same store.
+CONFUSIONS:
+- My append script asked for `PROGRAM/HANDOFF.md`'s existence and size before appending. The
+  existence test guarded against creating a stray file at a wrong path; the size was only for a
+  progress line. Neither was needed, and the second made a question for Al where there need not
+  have been one. Cost: STANDING (e), the correction above, and an escalation. Doc fix: STATE's
+  note 2 gives an append that fails on a missing file and asks the file system nothing. The
+  call it names was tested on scratch files before it was written down: it appends to an
+  existing file and raises on a missing one without creating it.
+- Disclosure item 8 says the message was compared "by reading, not by script" because I did not
+  yet know the harness's record could be read. Cost: none; step (0) redid it. Doc fix: STATE's
+  note 3.
+- A `cd` in the shell moves the harness's working directory, as Session 6 found: this session's
+  moved to the repo and once to `engine/`. Cost: none. `git -C` and absolute paths avoid it.
+HONESTY CHECK: no CLAIM transition. CLAIM-0001 to 0003 were re-examined: their stored-copy
+digests reproduce and S-0003's upstream pin and licence are unchanged, so none is downgraded.
+One staleness named, not fixed: CLAIM-0001's "no public release" is a statement about
+2026-08-22; this session did not re-check it, and F1.3 must before it does anything else. The
+exam's result is this session's reading of its own standing; the readings are listed for Al and
+not presented as settled. One sentence of this block overstated a fact, against the session, and
+is corrected below it rather than edited. Nothing entered a register from memory or from the
+sweep.
+LEAKAGE CHECK: checked, not assumed. No design decision was made this session, and no ADR, dial,
+detector, tolerance or registry entry was touched. `quarantine/` holds only its `README.md`
+(listed). Three source files were re-fetched for their digests, into the harness's scratch
+directory; they were hashed and not opened. One of them is the Nair preprint, whose subject is
+the Indus signs: its bytes were counted and hashed and nothing in it was read. No leakage.
+DETERMINISM CHECK: no MEASURED or REPRODUCED result. Every check above is a re-run of a
+committed script, a digest over committed or pinned bytes, or a query whose command is given.
+The session's own scripts (the disclosure, the standing record, the step (3) checks, the STATE
+assembly) were in the harness's scratch directory and are not in the repo; what each did is
+stated where its output is used. Nothing to quarantine from CLAIMS.
+DRIFT CHECK: no verdict creep; no demo drift; no detector-shopping — there is no detector yet.
+Gate-shopping was the live temptation, as it was in Sessions 4 and 5: a clean exam wants to
+close the gate, and this one closed it. What the session answers to itself: step (5) orders the
+closing on a pass; the one condition that holds the gate — a command run or a file read before
+the disclosure, other than what the prompt allows — is not met; and the nearest thing to it is
+reported to Al, not buried. Scope refused: beginning F1.1 after the gate (the stop condition is
+"gate reached"); putting a disclosure script in the repo (Session 6 refused the same); editing
+ADR-0003's notes (the notes for the next exam went to STATE, marked as the executor's).
+NEXT-SINGLE-ACTION: see STATE.md — F1.1, first step: retrieve the Miller and Li random-typing
+sources, record each in SOURCES.md, and seed CLAIM-0004 as UNKNOWN before any generator code.
+ESCALATIONS:
+- **The disclosure order — for Al's judgment; the gate is not held on it.** The append script
+  queried `PROGRAM/HANDOFF.md`'s existence and size before appending the disclosure (STANDING
+  (e), with the correction above). No command was run and no file was read before the disclosure
+  other than what the prompt allows, so the session read step (0)'s holding condition as not met
+  and closed the gate. If Al reads the size query as a breach, the closing is void, and what the
+  breach costs is his to say.
+- **The memory reading — Al may overrule.** STANDING (f) reads the disclosed memory as holding no
+  program state and names the four closest calls. If he reads any of them as program state, the
+  exam does not count (ADR-0003 D2) and the memory file needs his purge, or a non-exam session's,
+  before another attempt.
+- **Licence (R6).** Gate F0 has closed, so the session R6 describes is now Al's to ask for. That
+  session asks him for the commercial-licence contact line and does not copy SYNDEOM's.
+- Not open; for Al's information. STATE keeps the exam procedure at its end with four notes from
+  this session. They are the executor's words and he has not seen them; he may strike any.
+- Not open; ahead. F1.3 needs generators that were not publicly released on 2026-08-22
+  (CLAIM-0001). Contacting the author is Al's decision (§4.6) if the release has not appeared
+  when F1.3 is reached.
+- CI for this session's commit is confirmed by the session after the push and reported to Al in
+  the conversation; the repo's record of it is made by the next session at ORIENT, as STATE's
+  build line says.
+STOP-REASON: gate reached. Default branch green.
