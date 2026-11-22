@@ -1,7 +1,7 @@
 # STATE
 
 - **Updated:** 2026-11-22 UTC (Session 8, close: Al's rulings A–D on Session 7, then the licence
-  ADR)
+  ADR, then the fifth note of ADR-0003's Amendment 1)
 - **Phase:** F1 — REPRODUCTIONS (opened 2026-11-22 UTC, when Gate F0 closed)
 - **Gate:** F1 (**open**; nothing started). **Gate F0 is CLOSED — 2026-11-22 UTC, at `edcee64`** —
   by the cold-start exam Session 7 ran: a new conversation launched with the §6 Session-N prompt
@@ -29,11 +29,12 @@
 - **Build status:** **green** = `bash scripts/check.sh` prints `ALL GREEN` (ADR-0002 D6: fmt
   --check + `cargo test` + clippy `-D warnings` + lab verifier). Last verified locally 2026-11-22
   UTC by Session 8: at `31e503f` with its HANDOFF append in the tree, on the tree of `92367a6`,
-  and on the tree of the commit that adds ADR-0005, with the crate's new `license` field (16/16
-  tests; verifier `RESULT: ALL PASS`). CI: `.github/workflows/check.yml` runs the same script on
-  push to `main` and on PRs; last known CI success on `main` @ `92367a6` (run 45048292214; one
-  job, 8 steps). Check `gh run list -R Quigles1337/FR13DMAN --branch main` at ORIENT; this line
-  lags the last push by one run.
+  on the tree of `eb572ea` (ADR-0005, with the crate's new `license` field), and on the tree of
+  the commit that adds the fifth note to ADR-0003 (16/16 tests; verifier `RESULT: ALL PASS`).
+  CI: `.github/workflows/check.yml` runs the same script on push to `main` and on PRs; last
+  known CI success on `main` @ `eb572ea` (run 45051459260; one job, 8 steps). Check
+  `gh run list -R Quigles1337/FR13DMAN --branch main` at ORIENT; this line lags the last push by
+  one run.
   **Never make the workflow a required status check** (ADR-0002 D6). On 2026-11-22 UTC `main` had
   no branch protection and the repository no ruleset (GitHub API).
 - **Toolchain (pinned, ADR-0002 D1):** `rust-toolchain.toml` at repo root → `1.91.0` + clippy +
@@ -178,15 +179,15 @@ rulings govern.
 
 ## Standing escalations
 
-- **The disclosure append and ADR-0003's notes — ruled by Al; the note follows in a commit of
-  its own.** Ruling A orders that "from now on the append asks the file system nothing, as
-  Session 7's note 2 has it". Note 2 is in this file, and a session launched with the §6
-  Session-N prompt appends its disclosure before it may read this file. Session 8's append
-  asked the file system nothing, but its call would have created the file had it been missing
-  (HANDOFF Session 8, LAUNCH (e)). In his answer to Session 8 (item 5) Al ordered a fifth note
-  in ADR-0003's Amendment 1, in his words, as a commit of its own after the licence commit.
-  **Ruled. If ADR-0003's notes for the disclosing session end at note 4, that commit was not
-  made, and it is the first thing to do.**
+- **Open:** none.
+- **Closed by Al's ruling of 2026-11-22 UTC (his answer to Session 8, item 5), recorded in
+  HANDOFF Session 8:** the disclosure append. Ruling A orders that "from now on the append asks
+  the file system nothing, as Session 7's note 2 has it". Note 2 is in this file, and a session
+  launched with the §6 Session-N prompt appends its disclosure before it may read this file.
+  Session 8's append asked the file system nothing, but its call would have created the file
+  had it been missing (HANDOFF Session 8, LAUNCH (e)). Al ordered a fifth note in ADR-0003's
+  Amendment 1, in his words, as a commit of its own. It is there: ADR-0003 is read before the
+  append, so the rule now reaches a session in time.
 - **Closed by ADR-0005 (2026-11-22 UTC), recorded in HANDOFF Session 8:** the licence (R6). Al
   asked for the ADR in the message that launched Session 8 and gave the commercial-licence
   contact line there. Session 8 prepared it in the working tree and showed it to him. He
@@ -274,7 +275,12 @@ added under notes 2 and 3 is marked.
 
    *Added by Session 8.* Al ruled on this (ruling A): Session 7's query was not a breach, and
    from now on the append asks the file system nothing. A session reads this note only after
-   it has appended (*Standing escalations*, first item).
+   it has appended, so Al put the rule where it is read first: ADR-0003, Amendment 1, note 5,
+   in his words. In Node, `fs.openSync(path, fs.constants.O_WRONLY | fs.constants.O_APPEND)`
+   opens for appending without creating: tested by Session 8 on scratch files under Node
+   22.23.1, it appends to an existing file and fails with `ENOENT` on a missing one, which it
+   does not create. `fs.appendFileSync(path, …)` creates a missing file; Session 8 used it for
+   its own append and reported it.
 3. *The launching message, verbatim.* On Al's machine on 2026-11-22 UTC (harness version
    2.1.322) the harness kept its record of a conversation as one JSON-lines file, named for the
    session identifier, in the directory that holds the memory directory; the session identifier

@@ -1539,3 +1539,79 @@ ESCALATIONS:
   when F1.3 is reached.
 STOP-REASON: none at this commit. Al's answer orders one more commit, the fifth note of
 ADR-0003's Amendment 1, and then the stop. Default branch green.
+
+THIRD PART — the fifth note of ADR-0003's Amendment 1 (Al's answer, item 5). Appended after the
+second part's commit, `eb572ea`, was pushed. Nothing above this line was changed. This block's
+header foresaw two commits; Al's answer ordered this third one.
+
+- **CI for the second part.** `check` `success` for `eb572ea` (run 45051459260, a push event,
+  2026-11-22T17:48:03Z; one job, `gate`, 8 steps, all successful).
+- **The licence as published.** At `eb572ea` the blobs of `LICENSE`, ADR-0005 and `README.md`
+  have the SHA-256 digests the second part records as committed. After the push the GitHub API
+  reports the repository's licence as `NOASSERTION` ("Other"), which is what ADR-0005's
+  *Consequences* expected: `LICENSE` and the README state the licence, and that field does not.
+
+PHASE / GATE: F1 — REPRODUCTIONS / Gate F1 open, nothing started. This part does not move it.
+ADVANCED:
+- **ADR-0003, Amendment 1, note 5.** Added at the end of *Notes for the session making a
+  disclosure*, marked as Al's ruling of 2026-11-22 UTC and as his words, which were copied by
+  script from item 5 of his answer (line breaks added; SHA-256 of the words as copied, with one
+  final line feed: `08f3a97182ecbea979db0d424606db3ca211cf2e992bf9f35ccb9d3c1913fedb`). The file
+  up to the end of note 4 is byte for byte what it was (script, against `HEAD`'s copy). The
+  four earlier notes, the rulings and the rest of the ADR are untouched.
+- **STATE:** the escalation on the disclosure append is closed, and the list says that none is
+  open. Under note 2 of the exam procedure the session's addition now points to note 5, and
+  names a Node call that opens for appending without creating, tested on scratch files. The
+  build line names `eb572ea` and its CI run. NEXT-SINGLE-ACTION is unchanged.
+- **Verified on the tree of this commit.** `bash scripts/check.sh` → `ALL GREEN` (16/16 tests;
+  verifier `RESULT: ALL PASS`, which covers ADR-0003, ADR-0005, STATE and this file for carriage
+  returns and byte-order marks).
+- No CLAIM moved. This commit holds `PROGRAM/DECISIONS/ADR-0003.md`, `PROGRAM/STATE.md` and
+  this file, and nothing else.
+BELIEF DELTAS:
+- In the first part I put the gap to Al as a proposal and expected, at most, leave to draft a
+  note. He wrote the note himself, in one sentence. The rule and its words are his; the
+  executor's part is the placement and the mark.
+- I took Session 7's note 2 for a rule about queries. Al's note has two parts: open without
+  creating, and ask nothing else. My own append met the second and not the first. Evidence:
+  the first part, LAUNCH (e); the scratch test recorded in STATE's note 2.
+CONFUSIONS:
+- None new in this part. The one that led to it is in the first part: a rule for the append
+  that was written where the appending session could not read it. The doc fix is this commit.
+HONESTY CHECK: no CLAIM transition, and no register entry re-examined in this part. Note 5 is
+marked as Al's and the four above it as the executor's; the line that introduces the notes
+still calls them the executor's notes and was not edited, because Al ordered a note added and
+nothing else changed. The note states a rule and names no call: a session has to find one that
+meets it. STATE's note 2 names two, but a session reads STATE after it has appended. Nothing
+entered a register from memory or from the sweep.
+LEAKAGE CHECK: checked, not assumed. The decision recorded is process: how a session opens one
+file. It cites no corpus and touches no dial, detector, tolerance or manifest. `quarantine/`
+holds only its `README.md` (listed again). No leakage.
+DETERMINISM CHECK: no MEASURED or REPRODUCED result. The note's words were copied by script
+from the one copy of Al's answer taken from the harness's record. The scratch test of the Node
+call is described in STATE with the Node version; its script was typed at the shell and is not
+in the repo. Nothing to quarantine from CLAIMS.
+DRIFT CHECK: no verdict creep; no demo drift; no detector-shopping. Scope: not done, because
+Al's words are the note: adding a call, a hint or an example to note 5; rewording the line
+that introduces the notes. Not started: F1.1.
+NEXT-SINGLE-ACTION: see STATE.md — unchanged. F1.1, first step: retrieve the Miller and Li
+random-typing sources, record each in SOURCES.md, and seed CLAIM-0004 as UNKNOWN before any
+generator code.
+ESCALATIONS:
+- None open.
+- Closed in this block: Session 7's disclosure order, its memory reading, its four how-to
+  points and its four notes (rulings A–D); the licence (ADR-0005); the contact line in
+  `92367a6` (Al's answer, item 4); the disclosure append (note 5, this commit).
+- For Al's information; not this program's to fix, and he has not ruled on it. SYNDEOM's
+  S-0073 and ADR-0010 cite the PolyForm text and its terms "at tag `1.0.0`". The name is a
+  branch, and since 2026-11-19 the upstream README no longer carries the terms S-0073 quotes.
+  The licence text and its digest are unchanged.
+- Not open; ahead. F1.3 needs generators that were not publicly released on 2026-08-22
+  (CLAIM-0001). Contacting the author is Al's decision (§4.6) if the release has not appeared
+  when F1.3 is reached.
+- CI for this commit is confirmed by the session after the push and reported to Al in the
+  conversation; the repo's record of it is made by the next session at ORIENT, as STATE's
+  build line says.
+- No memory was written in this session.
+STOP-REASON: natural boundary — everything Al's two messages ordered is done, and he ordered
+the stop. Default branch green.
