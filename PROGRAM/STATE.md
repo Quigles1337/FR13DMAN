@@ -1,13 +1,12 @@
 # STATE
 
-- **Updated:** 2026-11-22 UTC (Session 7, close)
+- **Updated:** 2026-11-22 UTC (Session 8, after Al's rulings A–D on Session 7)
 - **Phase:** F1 — REPRODUCTIONS (opened 2026-11-22 UTC, when Gate F0 closed)
 - **Gate:** F1 (**open**; nothing started). **Gate F0 is CLOSED — 2026-11-22 UTC, at `edcee64`** —
   by the cold-start exam Session 7 ran: a new conversation launched with the §6 Session-N prompt
-  and nothing else (HANDOFF, Session 7). The closing rests on that session's own readings of its
-  standing. They are Al's to overrule, and one point of the session's conduct is reported to him
-  under *Standing escalations*. If he voids the closing, Gate F0 reopens and this file is
-  corrected to say so.
+  and nothing else (HANDOFF, Session 7). The closing rested on that session's own readings of
+  its standing, which were Al's to overrule. **Al ruled on them on 2026-11-22 UTC (rulings A–D,
+  below): the closing stands.**
 - **Default branch:** `main`. Remote: `origin` = `https://github.com/Quigles1337/FR13DMAN`
   (**public**; created and designated by Al 2026-08-22 — see ADR-0000).
   **ORIENT note (F7):** `git symbolic-ref refs/remotes/origin/HEAD` failed on this working copy at
@@ -15,15 +14,16 @@
   Source-of-truth fallback: `git remote show origin` (prints `HEAD branch: main`). Do not guess.
 - **Launch (R7):** Al launches FRIEDMAN sessions from the repository directory (ruled 2026-11-22
   UTC). It is his practice and not a condition of an exam (his answer, HANDOFF Session 6).
-  Sessions 6 and 7 were both started in `C:\Users\LEET`; Session 7 found the repo from the
-  location line in the executor's memory, which ADR-0003 D1 allows.
+  Sessions 6, 7 and 8 were all started in `C:\Users\LEET`; Sessions 7 and 8 found the repo from
+  the location line in the executor's memory, which ADR-0003 D1 allows.
 - **Build status:** **green** = `bash scripts/check.sh` prints `ALL GREEN` (ADR-0002 D6: fmt
   --check + `cargo test` + clippy `-D warnings` + lab verifier). Last verified locally 2026-11-22
-  UTC by Session 7, at `edcee64` with its HANDOFF append in the tree and again on its final tree
-  before the commit (16/16 tests; verifier `RESULT: ALL PASS`). CI: `.github/workflows/check.yml`
-  runs the same script on push to `main` and on PRs; last known CI success on `main` @ `edcee64`
-  (run 44995657251; one job, 8 steps). Check `gh run list -R Quigles1337/FR13DMAN --branch main`
-  at ORIENT; this line lags the last push by one run.
+  UTC by Session 8, at `31e503f` with its HANDOFF append in the tree and again on the tree of
+  the commit that records rulings A–D (16/16 tests; verifier `RESULT: ALL PASS`). CI:
+  `.github/workflows/check.yml` runs the same script on push to `main` and on PRs; last known CI
+  success on `main` @ `31e503f` (run 45001069373; one job, 8 steps). Check
+  `gh run list -R Quigles1337/FR13DMAN --branch main` at ORIENT; this line lags the last push by
+  one run.
   **Never make the workflow a required status check** (ADR-0002 D6). On 2026-11-22 UTC `main` had
   no branch protection and the repository no ruleset (GitHub API).
 - **Toolchain (pinned, ADR-0002 D1):** `rust-toolchain.toml` at repo root → `1.91.0` + clippy +
@@ -56,7 +56,7 @@ on 2026-11-22 UTC (HANDOFF Session 7, exam record, step (3)).
 | F0.3 manifest schema ADR merged | **done** | ADR-0001 (`7288a49`) + verifier (`2e9bef0`); enforced by the canonical tier (`27dd471`); comparison arithmetic pinned by ADR-0004 (`a3f42d2`) with seven conformance vectors identical in Rust and Python |
 | F0.4 scaffold (`engine/`, `lab/`, `corpora/`, `gallery/`, `quarantine/` + F8 README, CI) | **done** | ADR-0002 (`27dd471`): `rust-toolchain.toml` 1.91.0; `engine/` workspace, crate `friedman-manifest` (16 tests incl. RFC 8785 §3.2 sample bytes and all 24 finite Appendix B rows); `scripts/check.sh` gate; `.github/workflows/check.yml` (actions at v5, `91faff1`); `corpora/` `gallery/` `quarantine/` READMEs — F8 quotation checked verbatim programmatically in Session 5; `.gitignore`. CI success on `main` @ `766a095` |
 | Licenses recorded for anything touched | **done for everything touched so far** | S-0001..S-0004 (papers/RFC: hashed, not committed; S-0004 digest re-reproduced from the URL in Session 5); S-0005 (all 24 locked crates, licenses before ingestion; `cargo audit` exit 0 re-run 2026-08-25 Session 5). Standing rule: new crate ⇒ S-0005 row in the same commit |
-| Cold-start test | **passed 2026-11-22 UTC** by Session 7, at `edcee64` | A new conversation launched with the §6 Session-N prompt and nothing else; memory disclosed first, as the prompt orders; launching message compared with §6 by script; no prior turn; `ALL GREEN`; CI `success` for the tip; every row above confirmed; no value of program state guessed or taken from memory (HANDOFF Session 7). Earlier attempts: Session 4 DISQUALIFIED (memory held state); Session 5 void (R1) |
+| Cold-start test | **passed 2026-11-22 UTC** by Session 7, at `edcee64`; **the pass stands by Al's rulings A–C** | A new conversation launched with the §6 Session-N prompt and nothing else; memory disclosed first, as the prompt orders; launching message compared with §6 by script; no prior turn; `ALL GREEN`; CI `success` for the tip; every row above confirmed; no value of program state guessed or taken from memory (HANDOFF Session 7). Al's rulings of 2026-11-22 UTC on the session's own readings: the disclosure order was not a breach (A), the memory reading is accepted (B), the four places where the repo did not say how are accepted (C). Earlier attempts: Session 4 DISQUALIFIED (memory held state); Session 5 void (R1) |
 
 What Session 7 added to the evidence above, all on 2026-11-22 UTC: CLAIM-0003's transition and
 S-0003 are in `bee91d9`, whose subject names only CLAIM-0002, so the two commits the F0.2 row
@@ -69,7 +69,7 @@ the S-0005 table equals `engine/Cargo.lock`'s 24 registry crates by name and ver
 
 - None.
 
-## Al's rulings of 2026-11-22 UTC (verbatim)
+## Al's rulings R1–R7 of 2026-11-22 UTC (verbatim)
 
 Given in the message that launched Session 6, on the state at `7c3e5dd`, and copied here by script
 from the harness's record of that message, not typed. The whole message, with its work order, is
@@ -138,28 +138,59 @@ R7 (launch). From now on I launch FRIEDMAN sessions from the repository director
 STATE.
 ```
 
+## Al's rulings A–D on Session 7, 2026-11-22 UTC (verbatim)
+
+Given in the message that launched Session 8 (received 2026-11-22T17:04:30Z by the harness's
+record), on Session 7's exam and on the state at `31e503f`. Copied here by script from the
+harness's record of that message, not typed; each ruling is one line, as Al sent it. The whole
+message is in HANDOFF (Session 8). The letters A to D mean these rulings everywhere in this file.
+
+```text
+A. The disclosure order. Not a breach. The prompt allows a script, the script read none of the file's bytes, and Session 7 learned the size only after the append was written. The closing of Gate F0 stands. From now on the append asks the file system nothing, as Session 7's note 2 has it.
+B. The memory reading. Accepted, all four calls. None of them is program state.
+C. The four places where the repo did not say how. Accepted. None was a guess about the program.
+D. Session 7's four notes on the exam procedure stay, with one addition to note 3, in my words: a session opens its own conversation record and no other, by its exact name, and lists nothing in that directory. If the record is not where the note puts it, the session does not look for it: it records the launching message from its own context, states that it did, and I judge. A session that opens another conversation's record has taken on that conversation's context and is not cold (R1).
+```
+
+What the rulings change, in the executor's words. Where these and the rulings differ, the
+rulings govern.
+
+- **A.** Session 7's query of `PROGRAM/HANDOFF.md`'s existence and size, made by its append
+  script before the disclosure was written, is not a breach of the disclosure order. The closing
+  of Gate F0 stands. From now on the append asks the file system nothing (note 2 of *Executor's
+  notes from Session 7*, below).
+- **B.** Session 7's reading that its disclosed memory holds no program state is accepted, all
+  four of the closest calls it named (HANDOFF Session 7, STANDING (f)).
+- **C.** The four places where the repo did not say how to do a thing are accepted (HANDOFF
+  Session 7, exam record, item (4)): none was a guess about the program.
+- **D.** Session 7's four notes on the exam procedure stay, at the end of this file. Note 3
+  carries Al's addition, in his words.
+
 ## Standing escalations
 
-- **Session 7's disclosure order — reported to Al; the gate is not held on it.** Before it
-  appended its memory disclosure, Session 7's append script asked the file system whether
-  `PROGRAM/HANDOFF.md` exists and what its size was. It read none of the file's bytes, and it
-  printed the size only after the append was written. Step (0) of the exam procedure makes a
-  breach of the disclosure order Al's to judge, and holds the gate if the session "ran a command
-  or read a file before disclosing, other than what the prompt allows". Session 7 ran no such
-  command and read no such file, so it read the condition as not met and closed the gate. If Al
-  reads the size query as a breach, the closing is void and Gate F0 reopens. **Open — Al's to
-  judge; nothing waits on it unless he voids.**
-- **Session 7's reading of its memory — Al may overrule.** The session read its disclosed memory
-  as holding no program state and named the four closest calls (HANDOFF Session 7, STANDING (f)).
-  The memory file is the one Session 5 disclosed; the index has grown and now names SYNDEOM.
-  **Open in the same sense: nothing waits on it unless he overrules.**
-- **Licence — ruled (R6); not yet implemented, by the ruling's own terms.** The PolyForm
+- **The disclosure append and ADR-0003's notes — for Al.** Ruling A orders that "from now on the
+  append asks the file system nothing, as Session 7's note 2 has it". Note 2 is in this file. A
+  session launched with the §6 Session-N prompt appends its disclosure before it may read this
+  file: the constitution and ADR-0003 are all it reads first, and ADR-0003's notes for the
+  disclosing session say nothing about queries or about creating the file. Session 8 knew of
+  ruling A only because its launching message carried it. Its append asked the file system
+  nothing, but its call would have created the file had it been missing, which note 2 excludes
+  (HANDOFF Session 8, LAUNCH (e)). A fifth note in ADR-0003's Amendment 1 would put the rule
+  where a cold session reads it in time. Editing the ADR is not something Al's message orders,
+  so Session 8 did not. **Open — Al's to order or decline.**
+- **Licence — ruled (R6); Al has asked for it; in preparation, not committed.** The PolyForm
   Noncommercial License 1.0.0 under the Required Notice that R6 states, following Syndeom ADR-0010
-  D1 and D2 so far as they apply to FRIEDMAN. It is implemented by an ADR of its own, in a session
-  Al asks for after Gate F0 closes; that session asks Al for the commercial-licence contact line
-  and does not copy SYNDEOM's. Until then there is no `LICENSE` file and no crate carries a
-  `license` field. Gate F0 closed on 2026-11-22 UTC, so that session is now Al's to ask for.
-  **Open — waits for Al's request.**
+  D1 and D2 so far as they apply to FRIEDMAN, implemented by an ADR of its own. Al asked for that
+  ADR in the message that launched Session 8 and gave the commercial-licence contact line there
+  (HANDOFF Session 8). Session 8 prepares it in the working tree, shows it to Al, and commits it
+  only on his answer "accepted". At the commit that carries this text there is still no `LICENSE`
+  file and no crate carries a `license` field. If no later commit adds
+  `PROGRAM/DECISIONS/ADR-0005.md`, the licence was not accepted or not finished, and it is Al's
+  to ask for again. **Open — waits for Al's answer.**
+- **Closed by rulings A–D (2026-11-22 UTC), recorded in HANDOFF Session 8:** Session 7's
+  disclosure order (A: not a breach; the closing of Gate F0 stands); Session 7's reading of its
+  memory (B: accepted); the four how-to points (C: accepted); Session 7's four notes on the exam
+  procedure (D: they stay, with Al's addition to note 3).
 - **Closed, recorded in HANDOFF Session 6:** the ADR-0003 corollary (R1: ratified and extended to
   the launch) and the pre-purge memory copies (R5: carried out; nothing was left to delete).
 
@@ -221,7 +252,9 @@ HANDOFF Session 6).
   NEXT-SINGLE-ACTION to the F1.1 first step below. No memory writes (ADR-0003 D3).
 
 **Executor's notes from Session 7** — not rulings; what the session that ran the procedure wishes
-it had been told. Al has not seen them; strike any.
+it had been told. Al has seen them and ruled that they stay, with one addition to note 3, which
+is his (ruling D, 2026-11-22 UTC). The four notes are as Session 7 wrote them; what Session 8
+added under notes 2 and 3 is marked.
 
 1. *When step (0) is done.* A session learns that it is an exam, and that step (0) exists, only
    by reading this file. Session 7 ran the §4.1 commands, read STATE, did step (0), and then
@@ -230,6 +263,10 @@ it had been told. Al has not seen them; strike any.
    creating it (in Python, `os.open(path, os.O_WRONLY | os.O_APPEND | os.O_BINARY)`), and ask the
    file system nothing else about it: no existence test, no size. Session 7's script took both
    and had to report it to Al.
+
+   *Added by Session 8.* Al ruled on this (ruling A): Session 7's query was not a breach, and
+   from now on the append asks the file system nothing. A session reads this note only after
+   it has appended (*Standing escalations*, first item).
 3. *The launching message, verbatim.* On Al's machine on 2026-11-22 UTC (harness version
    2.1.322) the harness kept its record of a conversation as one JSON-lines file, named for the
    session identifier, in the directory that holds the memory directory; the session identifier
@@ -239,6 +276,15 @@ it had been told. Al has not seen them; strike any.
    Confirm the file by its `sessionId` field. The launching message is the first record of type
    `user`: its `parentUuid` is null and its `turnPosition` is prompt 1, turn 1. Copy the message
    and compare it with §6 by script.
+
+   *Al's addition (ruling D, 2026-11-22 UTC), in his words, copied by script from ruling D with
+   line breaks added:*
+
+   > a session opens its own conversation record and no other, by its exact name, and lists
+   > nothing in that directory. If the record is not where the note puts it, the session does not
+   > look for it: it records the launching message from its own context, states that it did, and I
+   > judge. A session that opens another conversation's record has taken on that conversation's
+   > context and is not cold (R1).
 4. *Completing the provisional header.* Nothing says what a completed header looks like. Session
    7 replaced the one provisional header line with a header in the §4.5 form and checked by
    script that every byte before and after that line was unchanged.

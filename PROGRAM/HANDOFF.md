@@ -1086,3 +1086,306 @@ ESCALATIONS:
   the conversation; the repo's record of it is made by the next session at ORIENT, as STATE's
   build line says.
 STOP-REASON: gate reached. Default branch green.
+
+---
+
+SESSION: 2026-11-22 UTC @ 31e503f (Session 8 — a working session, not an exam: launched with the
+§6 Session-N prompt followed, in the same message, by Al's rulings A–D on Session 7 and his
+order for the licence ADR. This header was provisional until orientation and was completed
+after it; the disclosure below is as it was first appended. The commits of this session land
+on top of `31e503f`: one that carries the rulings on their own, and a second for the licence
+ADR only if Al answers "accepted")
+
+MEMORY DISCLOSURE (ADR-0003, D2 as amended by Amendment 1). First entry of this block,
+appended by script at 2026-11-22T17:06:25Z.
+
+Before this append the session did four things and no others. It read
+`PROGRAM/FRIEDMAN-PROGRAM.md` in full. It read `PROGRAM/DECISIONS/ADR-0003.md` in full. It
+opened this program's own memory file, which is reproduced whole below. It wrote the append
+script to a scratch directory outside the repo. It ran no command and read no other file.
+The script read the two memory files named below, opened `PROGRAM/HANDOFF.md` for appending
+only, and wrote these bytes. It asked the file system nothing about HANDOFF: no existence
+check, no size, no listing, no read.
+
+**Store.** The harness loaded one memory index into the context of the session and named the
+directory it came from: `C:\Users\LEET\.claude\projects\C--Users-LEET\memory\`, file `MEMORY.md`.
+That directory is the one store. Two files in it were opened: `MEMORY.md`, by the script, to
+copy lines from it; and `project_friedman.md`, by the session and then by the script. No other
+memory file was opened, and none will be.
+
+**The index (`MEMORY.md`).** 124 lines. The script counted the lines of the file as
+they are separated by line feeds, with any carriage return removed and the last line ending
+not counted as a line. 6 of them name FRIEDMAN, FR13DMAN, KOBER or SYNDEOM, matched as a
+substring in any letter case. They are lines 90, 91, 93, 94, 114, 115 of the file and are
+reproduced verbatim below. The other 118 lines are withheld: 81 with text and 37 empty.
+They concern other programs and this machine, and are not this repository's to publish. The
+script copied the lines below from the file on disk at the time of the append. They were not
+typed and not taken from the context of the session.
+
+```text
+## KOBER (Linear A falsification infrastructure)
+- [Repo pointer + machine hazards](project_kober.md) — `C:\Users\LEET\KOBER`, remote `Quigles1337/KOBER` (**public**); the constitution `PROGRAM/KOBER-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (memory-policy ADR).
+## FR13DMAN (FRIEDMAN — designedness-detection instrument)
+- [Repo pointer + machine hazards](project_friedman.md) — `C:\Users\LEET\FR13DMAN` / `Quigles1337/FR13DMAN` (**public**, leetspeak name); sibling of KOBER; the constitution `PROGRAM/FRIEDMAN-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (ADR-0003).
+## SYNDEOM (AI-proof calibration — third sibling of KOBER/FRIEDMAN)
+- [Repo pointer + machine hazards](project_syndeom.md) — `C:\Users\LEET\Syndeom` / `Quigles1337/Syndeom` (**public**); the constitution `PROGRAM/SYNDEOM-PROGRAM.md` is the sole authority — always run its §4 loop from the repo, never from memory. No program state is recorded here or in the linked file (SD15 / FR13DMAN ADR-0003).
+```
+
+**This program's own memory file (`project_friedman.md`).** Reproduced whole: 42 lines,
+copied by the script from the file on disk, counted the same way.
+
+```text
+---
+name: project-friedman
+description: "FRIEDMAN program - repo C:\\Users\\LEET\\FR13DMAN (note leetspeak name); constitution and ALL program state live IN the repo, never here"
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 2d23bdef-ec96-488e-8ec2-3c934065c2bc
+  modified: 2026-08-25T18:54:35.958Z
+---
+
+**FRIEDMAN** - repo `C:\Users\LEET\FR13DMAN` (**leetspeak name, not FRIEDMAN**), remote
+`https://github.com/Quigles1337/FR13DMAN` (**public**).
+
+This file locates the repo and records machine hazards. Per ADR-0003 it records NO program
+state: no phase, gate, claims, commits, toolchain versions, escalations, or next actions.
+
+**Standing rule:** the repo is the sole memory of the program (constitution at
+`PROGRAM/FRIEDMAN-PROGRAM.md`). Every session: read the constitution, then run the section 4
+loop from `PROGRAM/STATE.md` and `PROGRAM/HANDOFF.md`. Never resume from this file. Discover
+the default branch, toolchain, and every other value from the repo - never assume one, and
+never carry a value across from the sibling program.
+
+**Hard invariant (kept deliberately; a standing prohibition, not state):** FRIEDMAN never
+issues verdicts on contested artifacts.
+
+**Never work in the sibling KOBER tree** - identical `PROGRAM/` schema, and its sessions may
+be live concurrently.
+
+Machine and harness hazards:
+- MDPI and Taylor & Francis return 403 to plain tool fetches; arXiv and the GitHub API work.
+- Long heredocs fail to parse in this harness, and a bare `cat > file` with no heredoc blocks
+  on open stdin (cost a 10-minute timeout). Write multi-line files with the Write/Edit tools;
+  pass commit messages via `-F file`.
+- `sed -i` and `python -c` replacement strings turn backslash-r and backslash-xef escapes into
+  raw bytes; a broken line got committed once this way.
+- A `grep` inside an && chain is NOT a guard - a match exits 0.
+- Deep `find` over the home dir hangs on OneDrive reparse points (120 s timeout); search
+  specific dirs with `-maxdepth`.
+- `git symbolic-ref refs/remotes/origin/HEAD` may fail on a working copy that was init-ed then
+  remote-added; fallback `git remote show origin`, or repair with `git remote set-head origin -a`.
+- This machine has autocrlf active and MSYS grep reports false carriage returns; CRLF conversion
+  can silently break byte digests. Verify line endings with `git ls-files --eol`, never by eye.
+```
+
+**What else was in context.** Besides its standing instructions, its tool and skill lists and
+its description of the machine, the harness put two things into context that are not from the
+store: the email address of the account, and an instruction on attribution lines for commits.
+Neither names one of the four programs, and neither is reproduced here.
+
+**The launching message.** It carried more than the §6 Session-N prompt. After the text of the
+prompt it gave Al's rulings on Session 7 and his order for the licence ADR, and it says itself
+that this session is not an exam. It is recorded later in this block.
+
+This entry reproduces the memory and does not judge it. Whether any of it is program state is
+read after orientation, in the rest of this block.
+
+LAUNCH. Appended after orientation: the §4.1 commands, `PROGRAM/STATE.md`, this file's Sessions 6
+and 7, CLAIMS, ADR-0000, ADR-0002, SOURCES and the gate. Above this line the session changed one
+thing after the append: the provisional header line was replaced by the header that now opens
+the block. Every other byte above is as it was, checked by script against `HEAD`'s copy of this
+file and the appended bytes (SHA-256 of the appended bytes
+`72b731a7abfe83d8b9dd1df810028b311523cf8ac31b04552c1144416fd1be5e`).
+
+- **(a) The launching message, verbatim.** Copied by script from the harness's record of this
+  conversation (its first `user` record, timestamp 2026-11-22T17:04:30.083Z), not typed. The
+  harness delivered Al's text inside a paste wrapper; the text between the wrapper's tags
+  follows. Outside the wrapper the record's message holds 3 characters, all of them
+  whitespace. The line breaks are Al's: the first twelve lines are the §6 prompt, and each
+  paragraph after it is one long line.
+
+```text
+Before anything else, make the memory disclosure that ADR-0003 requires: read
+PROGRAM/FRIEDMAN-PROGRAM.md and PROGRAM/DECISIONS/ADR-0003.md in full, read the executor memory they
+tell you to disclose, and append the disclosure as the first entry of a new block at the end of
+PROGRAM/HANDOFF.md, whether or not this session will attempt a gate's cold-start test, and with no
+other command or file read first. Append it without reading HANDOFF's existing contents (a shell
+append or a script, not a file-editing tool that reads the file first), under a provisional block
+header that carries the UTC date and that you complete after orientation without changing the
+disclosure. You are the executor of the FRIEDMAN program. Having disclosed, run the metacognitive
+loop (§4) exactly: ORIENT from the repo (state files are claims; builds are evidence), ASSESS, PLAN
+one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5 schema — including
+the LEAKAGE, DETERMINISM, and DRIFT checks — and stop clean per §4.6. Honor escalations — some
+decisions are Al's, not yours.
+
+This message carries more than §6, so this session is not an exam. After the disclosure and orientation it does two things, in this order.
+
+First, record these rulings on Session 7 verbatim in HANDOFF and STATE, and commit and push them on their own:
+
+A. The disclosure order. Not a breach. The prompt allows a script, the script read none of the file's bytes, and Session 7 learned the size only after the append was written. The closing of Gate F0 stands. From now on the append asks the file system nothing, as Session 7's note 2 has it.
+B. The memory reading. Accepted, all four calls. None of them is program state.
+C. The four places where the repo did not say how. Accepted. None was a guess about the program.
+D. Session 7's four notes on the exam procedure stay, with one addition to note 3, in my words: a session opens its own conversation record and no other, by its exact name, and lists nothing in that directory. If the record is not where the note puts it, the session does not look for it: it records the launching message from its own context, states that it did, and I judge. A session that opens another conversation's record has taken on that conversation's context and is not cold (R1).
+
+Second, the licence ADR that ruling R6 orders. Follow R6 as recorded. The commercial-licence contact line is mine, given here and not copied: "For commercial licensing, contact Alexander David Zalewski at adz@alphx.io." FRIEDMAN has carried no licence until now: state that in the ADR, and claim no earlier licence for earlier versions. Prepare everything in the working tree, run the gate, and stop before the commit. Show me the ADR, the first lines of LICENSE and the README's licence section. Commit only when I answer "accepted"; then push, confirm CI and stop. F1.1 stays the next action.
+```
+
+- **(b) Compared with §6, by script.** The message begins with the fenced Session-N block in §6
+  of `PROGRAM/FRIEDMAN-PROGRAM.md` as it stands in the working tree, character for character
+  (1,087 characters). After it come 1,806 characters more: the paragraph that says the session is
+  not an exam, rulings A to D, and the order for the licence ADR. The message carries more than
+  §6's text, as it says itself. Under step (0) of the exam procedure a session so launched is
+  not an exam. This session attempts no cold-start test.
+- **(c) Prior turns.** None. The launching message is the record's first `user` record: it has
+  no parent record (`parentUuid` null) and the harness numbers it prompt 1, turn 1. The 4 records
+  before it in the file are of types `mode`, `permission-mode`, `session-owner` and
+  `file-history-snapshot`; none is a user or assistant message.
+- **(d) The record.** Opened as Session 7's note 3 describes and within the bound ruling D
+  sets: one file, by its exact name (the session identifier in the scratch path the harness
+  names, with `.jsonl`), in the directory that holds the memory directory. It was where the note
+  puts it. Nothing in that directory was listed and no other conversation's record was opened.
+  Up to the session's first reply every record that carries a `sessionId` carries this
+  session's. The record gives the harness version as 2.1.322 and the launch directory as
+  `C:\Users\LEET`. Attachment records between the launching message and the first reply, by
+  the harness's type name, one of each:
+  `agent_listing_delta`, `credential_org`, `date`, `deferred_tools_delta`, `environment`,
+  `instructions`, `mcp_instructions_delta`, `model`, `prompt_snapshot`, `remote_session_change`,
+  `session_context`, `skill_listing`.
+  The memory index is among them and is reproduced only as D2 allows, in the disclosure above.
+  No other attachment is reproduced.
+- **(e) The disclosure order.** The session's tool calls up to and including the append, listed
+  by script from the record (`<scratch>` stands for the harness's scratch directory):
+  1. Read `C:\Users\LEET\FR13DMAN\PROGRAM\FRIEDMAN-PROGRAM.md`
+  2. Read `C:\Users\LEET\FR13DMAN\PROGRAM\DECISIONS\ADR-0003.md`
+  3. Read `C:\Users\LEET\.claude\projects\C--Users-LEET\memory\project_friedman.md`
+  4. Write `<scratch>\disclose.mjs`
+  5. Bash `node "<scratch>/disclose.mjs" "<scratch>/disclosure-block.bin"`
+  The script was written to the scratch directory before it ran: a file written, not a command
+  and not a file read. The append made no existence test, took no size and read nothing, which
+  is what ruling A orders "from now on". The session knew ruling A because the launching message
+  carries it. It did not know Session 7's note 2, which is in STATE and could not be read before
+  the append. Note 2 opens the file "without creating it". This session's call, Node's
+  `fs.appendFileSync`, would have created the file had it been missing. It was not missing:
+  at ORIENT `git status` showed the file modified, not new, and the working-tree file was
+  `HEAD`'s copy followed by the appended bytes and nothing else (SHA-256 compared). The
+  difference from note 2, and the gap it shows, are carried to ESCALATIONS.
+- **(f) Is any disclosed memory program state? The session's reading: no.** The six index
+  lines and the 42-line file disclosed above are, line for line, the six lines and the 42 lines
+  Session 7 disclosed (compared by script over this file: identical). Session 7 read that
+  text as holding no program state and named its four closest calls, and Al has ruled on that
+  reading (ruling B: accepted, all four; none is program state). That ruling B therefore covers
+  the text this session was given is the executor's inference: Al ruled on Session 7's reading,
+  not on this session's.
+- **(g) Conversation context (R1).** This conversation did not build the state it found: at
+  ORIENT `main`'s tip was `31e503f`, committed 2026-11-22T03:01:35-05:00, before the
+  conversation began, and `git status` showed one change, this session's own append. It is not
+  a cold session all the same: its launching message carries rulings and an order beyond §6.
+- **(h) Memory writes.** None so far. None will be made in this session.
+
+AL'S RULINGS A–D ON SESSION 7. They are the four lettered lines of the message above (its lines
+18 to 21). The same four lines are copied by script into `PROGRAM/STATE.md`, under *Al's rulings
+A–D on Session 7*, with the executor's account of what each changes. SHA-256 of the four lines
+as copied, joined by line feeds: `c622fc7f79c7a8e734c2e7a953e636a3dfdf11ca1f1bad8c973445fb70ea947e`.
+
+RECORD — FIRST PART (the rulings). The commit that carries this text lands on top of `31e503f`
+and holds this file and `PROGRAM/STATE.md` only. The licence ADR is the session's second task
+and is recorded after this part, if Al accepts it.
+
+PHASE / GATE: F1 — REPRODUCTIONS / Gate F1 open, nothing started: at session start and at this
+commit. Gate F0 is closed (2026-11-22 UTC, at `edcee64`); by ruling A the closing stands.
+ADVANCED:
+- The memory disclosure, first, by script, before anything but the two ordered reads and the
+  memory itself (top of this block).
+- ORIENT (§4.1). Top level `C:/Users/LEET/FR13DMAN`; `origin` =
+  `https://github.com/Quigles1337/FR13DMAN.git`; branch `main` at `31e503f`, up to date with
+  `origin/main`, and `git ls-remote origin refs/heads/main` gives the same SHA;
+  `git symbolic-ref refs/remotes/origin/HEAD` → `refs/remotes/origin/main` without the fallback;
+  `git status` showed `PROGRAM/HANDOFF.md` modified by this session's append and nothing else;
+  no stash, no tag. Read: STATE; this file's Session 7, then Session 6; CLAIMS (three entries,
+  all VERIFIED); ADR-0000 and ADR-0002 in full (ADR-0003 with its Amendment 1 was read before
+  the disclosure); SOURCES (S-0001 to S-0005); `README.md`; `scripts/check.sh`; the two
+  `Cargo.toml` files; the workflow; `.gitattributes` and `.gitignore`. ADR-0001 and ADR-0004
+  were not re-read: neither task of this session touches them.
+- Build, as evidence. `bash scripts/check.sh` → `ALL GREEN` at `31e503f` with this session's
+  append in the tree: rustc and cargo 1.91.0 from the pin; fmt clean; 16/16 tests; clippy
+  `-D warnings` clean; verifier `RESULT: ALL PASS`. CI: `check` `success` for the tip `31e503f`
+  (run 45001069373, a push event, 2026-11-22T08:04:10Z; one job, `gate`, 8 steps, all
+  successful). STATE and the repo disagreed nowhere. One line of STATE lagged, as it says it
+  does: its last-known CI run was the one for `edcee64`.
+- Rulings A–D recorded verbatim, in this block and in STATE, both copied by script from the one
+  copy of Al's message taken from the harness's record.
+- STATE updated for the rulings and for nothing else: the Gate F0 line and the cold-start row
+  say that the closing stands; the two escalations on Session 7's conduct are closed; the
+  licence escalation says that Al has asked and that the work is in preparation; note 3 of the
+  exam procedure carries Al's addition, copied by script from ruling D; note 2 and the line
+  that introduces the notes say what Al ruled; the heading of the earlier rulings now names
+  them R1–R7, because both sets carry the same date; the launch line and the build line name
+  this session.
+  NEXT-SINGLE-ACTION is unchanged: Al's message says "F1.1 stays the next action".
+- No CLAIM moved. CLAIMS.md, SOURCES.md, the ADRs, the constitution and every file other than
+  `PROGRAM/STATE.md` and this one are untouched by this commit.
+BELIEF DELTAS:
+- At the disclosure I knew "the append asks the file system nothing" from ruling A, and nothing
+  of note 2's "without creating it". STATE is where that is written, and STATE is read after the
+  append. Evidence: LAUNCH (e); STATE, *Executor's notes from Session 7*, note 2. A rule for the
+  append reaches a cold session only if it is in the constitution or ADR-0003.
+- The memory this session was given is the memory Session 7 was given: 124 index lines, the
+  same six of them naming the four programs, the same 42-line file. Evidence: LAUNCH (f).
+- Session 6's inference that a session launched from the repository directory would be given a
+  different memory store, or none, is still untested: this session was launched from
+  `C:\Users\LEET`, as Sessions 6 and 7 were, and was given the same store.
+- I expected Al's rulings to be recorded by quoting them where they apply. Each ruling is one
+  long line and Al asked for them verbatim, so they are in one block, as sent, and the account
+  of what each changes is the executor's and is marked so.
+CONFUSIONS:
+- The append's open mode, above. Cost: one escalation. No doc fix is in this commit: the fix
+  belongs in ADR-0003's notes, which this session was not ordered to edit. It is put to Al.
+- §4.3 says a session plans one thing. Al's message orders two, in order: record the rulings,
+  then the licence ADR. The session did not start the inherited NEXT-SINGLE-ACTION (F1.1) and
+  did not choose a task of its own.
+HONESTY CHECK: no CLAIM transition. CLAIM-0001 to 0003 were read; none was re-examined against
+its source this session (Session 7 did that earlier the same day), so none is confirmed anew and
+none is downgraded. CLAIM-0001's "no public release" is still a statement about 2026-08-22, and
+F1.3 must re-check it before it does anything else. Al's words are in verbatim blocks copied by
+script; the executor's accounts of them are marked as the executor's. The step from ruling B to
+this session's memory is marked as an inference. Nothing entered a register from memory or from
+the sweep.
+LEAKAGE CHECK: checked, not assumed. The decisions recorded in this part are process: a
+disclosure order, a memory reading, four how-to points, notes on the exam procedure. None cites
+a corpus. No ADR, dial, detector, tolerance or registry entry was touched. `quarantine/` holds
+only its `README.md` (listed). No leakage.
+DETERMINISM CHECK: no MEASURED or REPRODUCED result. Every verbatim block in this part was made
+by script from one copy of Al's message (SHA-256 of the message text
+`2eb0e7f57482d63b07935173e3209bdfab6b131c4eb7cb858b2aa613885b9d30`) and compared after it was written. The
+session's scripts are in the harness's scratch directory and not in the repo; what each did is
+stated where its output is used. Nothing to quarantine from CLAIMS.
+DRIFT CHECK: no verdict creep; no demo drift; no detector-shopping — there is no detector yet.
+The live temptation was scope. Three things were refused: adding the fifth note to ADR-0003
+without an order; writing the append rule into the executor's memory, where a cold session
+would in fact read it in time, but which would change the text Al has just ruled on; and
+starting F1.1.
+NEXT-SINGLE-ACTION: see STATE.md — unchanged. F1.1, first step: retrieve the Miller and Li
+random-typing sources, record each in SOURCES.md, and seed CLAIM-0004 as UNKNOWN before any
+generator code.
+ESCALATIONS:
+- **The disclosure append and ADR-0003's notes — for Al.** Ruling A's "from now on the append
+  asks the file system nothing, as Session 7's note 2 has it" cannot reach a cold session
+  through STATE: the session appends before it may read STATE. ADR-0003's notes for the
+  disclosing session say nothing about queries or about creating the file. This session's
+  append asked nothing but would have created a missing file (LAUNCH (e)). A fifth note in
+  ADR-0003's Amendment 1 would close the gap; the edit is Al's to order or decline.
+- **Licence (R6) — in preparation.** Al asked for the licence ADR and gave the contact line in
+  the message above. The session prepares it in the working tree, shows it to him, and commits
+  only on his answer "accepted".
+- For Al's information; not open. This commit publishes his whole launching message in this
+  file, the licence order and the contact line included, because a session's launching message
+  is part of its record. The licence work itself is not in this commit.
+- Not open; ahead. F1.3 needs generators that were not publicly released on 2026-08-22
+  (CLAIM-0001). Contacting the author is Al's decision (§4.6) if the release has not appeared
+  when F1.3 is reached.
+- CI for this commit is confirmed by the session after the push and reported to Al in the
+  conversation. The repo's record of it is in the second part of this block, if there is one,
+  and otherwise is made by the next session at ORIENT.
+STOP-REASON: none at this commit: the session goes on to the licence ADR. If no text follows
+this part, the session ended before Al answered on the licence. Default branch green.
