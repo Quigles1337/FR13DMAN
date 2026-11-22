@@ -470,3 +470,233 @@ ESCALATIONS:
   not done by this session under D3).
 - Repository LICENSE file (carried).
 STOP-REASON: blocker requiring Al — the gate decision itself. Default branch green.
+
+---
+
+SESSION: 2026-11-22 UTC @ 7c3e5dd (Session 6 — an informed working session launched with Al's
+rulings R1–R7; not launched with the §6 Session-N prompt and not an exam. One commit carrying
+this entry, ADR-0003's Amendment 1, the constitution edit and the STATE rewrite lands on top of
+`7c3e5dd`, made only after Al accepted the diff, with the one change to STATE that his answer
+orders)
+
+LAUNCH CONTEXT: the first turn of a new conversation; no turn preceded it. Received
+2026-11-22T04:21:57Z (the harness's record), in a session started in `C:\Users\LEET`, not in the
+repository directory (R7 applies from the next launch). Al's whole message is reproduced below,
+copied by script from the harness's record of it. The harness had delivered it inside a paste
+wrapper, which is not part of the message and is not reproduced. The harness also loaded the
+executor's memory index into the session's context. This session makes no D2 disclosure: it was
+not launched with the Session-N prompt (R2) and attempts no cold-start test (D2 as it stood at
+`7c3e5dd`). It opened no memory file and wrote no memory. It built the state the exam will test,
+so it is **not cold** (R1), and it neither ran nor rehearsed the exam.
+
+AL'S MESSAGE (verbatim):
+
+```text
+You are the executor of the FRIEDMAN program. Read PROGRAM/FRIEDMAN-PROGRAM.md in full, then run
+the metacognitive loop (§4) exactly: ORIENT from the repo (state files are claims; builds are
+evidence), ASSESS, PLAN one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per
+the §4.5 schema — including the LEAKAGE, DETERMINISM, and DRIFT checks — and stop clean per §4.6.
+Honor escalations — some decisions are Al's, not yours.
+
+Al's rulings follow. This session records them and makes the Gate F0 cold-start exam runnable. It
+does not run the exam: it builds the state the exam will test, so it is not cold. I am ruling on the
+state at commit 7c3e5dd. If main is anywhere else when you orient, stop and tell me.
+
+R1 (ADR-0003, the corollary). Ratified. A session running in the conversation context that built the
+state under test is not cold, whatever its memory holds, and its exam attempt does not count. I
+extend it as SYNDEOM's SD15 states it: a cold session is launched with the §6 Session-N prompt
+verbatim and nothing that carries program state. Session 5's attempt is therefore void as an
+examination. Its evidence that the documents can be walked, and its document fixes, stand. Gate F0
+stays open until a cold session passes.
+
+R2 (disclosure first; amends ADR-0003 D2 and the constitution's §6). Every session launched with the
+§6 Session-N prompt makes the D2 disclosure, whether or not it will attempt a cold-start test, as
+the first entry of its HANDOFF block, before any action except reading the constitution and ADR-0003
+in full and reading the memory it discloses. It appends the disclosure to PROGRAM/HANDOFF.md without
+reading that file's existing contents. Reason: D2 says "before any other action", and a cold session
+learns that it is an exam only from STATE, after it has acted. SYNDEOM made every session launched
+with its Session-N prompt disclose first (Syndeom ADR-0009). This adopts that order and nothing else
+of SYNDEOM's memory or orientation records.
+
+R3 (what a disclosure holds; amends ADR-0003 D2). The disclosure covers the memory the harness loads
+for the session, and the session opens no other store. It reproduces verbatim every recalled line
+that names FRIEDMAN, FR13DMAN, KOBER or SYNDEOM, and this program's own memory file if the session
+recalls or opens it. Every other line is withheld and given by count: this repository is public, and
+a line about any other program is not this repository's to publish. A verbatim reproduction is
+copied from the file by script, never typed.
+
+R4 (the new §6 Session-N prompt). Replace the Session-N prompt in §6 with the text between the two
+marker lines below, verbatim and without the marker lines, and note the amendment in the
+constitution's header as SYNDEOM's constitution notes its own.
+
+BEGIN SESSION-N PROMPT
+Before anything else, make the memory disclosure that ADR-0003 requires: read
+PROGRAM/FRIEDMAN-PROGRAM.md and PROGRAM/DECISIONS/ADR-0003.md in full, read the executor memory they
+tell you to disclose, and append the disclosure as the first entry of a new block at the end of
+PROGRAM/HANDOFF.md, whether or not this session will attempt a gate's cold-start test, and with no
+other command or file read first. Append it without reading HANDOFF's existing contents (a shell
+append or a script, not a file-editing tool that reads the file first), under a provisional block
+header that carries the UTC date and that you complete after orientation without changing the
+disclosure. You are the executor of the FRIEDMAN program. Having disclosed, run the metacognitive
+loop (§4) exactly: ORIENT from the repo (state files are claims; builds are evidence), ASSESS, PLAN
+one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5 schema — including
+the LEAKAGE, DETERMINISM, and DRIFT checks — and stop clean per §4.6. Honor escalations — some
+decisions are Al's, not yours.
+END SESSION-N PROMPT
+
+R5 (the pre-purge copies). In the executor memory directory that holds project_friedman.md, which I
+believe is C:\Users\LEET\.claude\projects\C--Users-LEET\memory, delete MEMORY.md.bak,
+project_friedman.md.bak and project_kober.md.bak if they exist. Confirm that project_friedman.md is
+in that directory before you touch anything. Do not open the three files. Record each one's name,
+size and SHA-256 before deleting it, and nothing about any other file there. This is a memory write
+that I order, and this session is not an exam. The third file is KOBER's residue; deleting it is my
+housekeeping on this machine and no decision about KOBER.
+
+R6 (licence). The PolyForm Noncommercial License 1.0.0, under "Required Notice: Copyright 2026
+Alexander David Zalewski (https://github.com/Quigles1337/FR13DMAN)", following Syndeom ADR-0010 D1
+and D2 so far as they apply to FRIEDMAN. It is implemented by an ADR of its own, in a session I ask
+for after Gate F0 closes. Ask me then for the commercial-licence contact line; do not copy it from
+SYNDEOM. Until then there is no LICENSE file and no license field.
+
+R7 (launch). From now on I launch FRIEDMAN sessions from the repository directory. Record it in
+STATE.
+
+What to do, in order. Record these rulings verbatim: R1 to R4 as an amendment to ADR-0003, and all
+of them in STATE and HANDOFF. Make the edits that R2 to R4 order. Carry out R5. Rewrite STATE for
+the result: the cold-start row is void for Session 5 and open; the corollary, the pre-purge copies
+and the licence stand in the escalations as ruled; NEXT-SINGLE-ACTION is the exam, by the procedure
+STATE already gives for a ratified corollary, in a new conversation launched with the amended §6
+Session-N prompt verbatim and nothing else. Add to that procedure that the exam session records the
+launching message it received, verbatim, and whether any turn preceded it, and that it records
+DISQUALIFIED and stops if the message carries anything beyond §6's text or a prior turn exists.
+
+Then stop before you commit. Show me the complete diff of the constitution and the amended ADR-0003
+in full, and list every other file changed. Commit and push only when I answer "accepted". After the
+push, confirm that CI passes on the new tip, then end your last message with the amended §6
+Session-N prompt in a code block, exactly as the constitution has it, so that I can launch the exam
+with it.
+```
+
+AL'S ANSWER TO THE DIFF (verbatim): his second message in the conversation, received
+2026-11-22T06:49:07Z (the harness's record) and copied from that record by script. It is one
+long line, kept as he sent it.
+
+```text
+Accepted, with one change to STATE and no further stop. The launch directory in R7 is my practice, not a condition of the exam. Say so in NEXT-SINGLE-ACTION: a session launched from another directory is no less cold for it. The four notes, the three readings of step (0), the header-only note, the UTC dates and the Co-Authored-By trailer are accepted as written.
+```
+
+PHASE / GATE: F0 — FOUNDATION / Gate F0 open; the cold-start test is not passed — Session 5's
+attempt is void as an examination (R1)
+ADVANCED:
+- ORIENT (§4.1): `main` at `7c3e5dd` both locally and on the remote (`git ls-remote origin
+  refs/heads/main`), which is the state Al ruled on; tree clean; `origin/HEAD` → `main` without
+  the fallback. `bash scripts/check.sh` → `ALL GREEN` at `7c3e5dd` under the pinned 1.91.0 (16/16
+  tests, fmt, clippy `-D warnings`, verifier `RESULT: ALL PASS`). CI `check` `success` for the
+  tip `7c3e5dd` (run 32890045263, 2026-08-25T19:31:22Z). Read: the constitution in full, STATE,
+  HANDOFF (Sessions 4 and 5), CLAIMS (3 VERIFIED), ADR-0000, ADR-0002, ADR-0003, ADR-0004.
+  ADR-0001 was not re-read; this session's one task does not touch it.
+- R1–R4 recorded as **Amendment 1 of ADR-0003**: the rulings verbatim; the corollary ratified and
+  extended; D2 replaced (disclosure first, by every session launched with the Session-N prompt;
+  what it reproduces and what it withholds by count; appended without reading HANDOFF); four notes
+  for the disclosing session, marked as the executor's. The ADR's earlier text stays, with an
+  amended Status line and two bracketed pointers to the amendment.
+- Constitution: the §6 Session-N prompt replaced by the text between R4's marker lines, and an
+  **Amendments** line added to the header in the form SYNDEOM's constitution uses for its own.
+  Nothing else in it changed; the version string stays "v1.0" and the footer is as it was.
+  SHA-256 at `7c3e5dd` (21,180 bytes):
+  `38a471aa31a02f3d6725848050434ba2b0ae14eb1f7e7ac93620781fcc1ce9cd`.
+  SHA-256 with this commit (22,022 bytes):
+  `68e40defe9382dcab20781790fd7e57faf1d8df27ca05d83af6018f012bc0b26`.
+- R5 carried out. `project_friedman.md` was confirmed present in
+  `C:\Users\LEET\.claude\projects\C--Users-LEET\memory` before anything else was done there.
+  `MEMORY.md.bak`, `project_friedman.md.bak` and `project_kober.md.bak` were each **absent**: by a
+  shell file test at 2026-11-22T04:26:41Z, and by a second method at 04:27:13Z. The same two tests
+  found `project_friedman.md`, so the absence is not a check that failed quietly. Nothing existed
+  to delete: nothing was deleted, nothing was opened, and there is no size or SHA-256 to record.
+  Nothing else in that directory was listed, read or recorded.
+- R6 and R7 recorded in STATE. STATE rewritten for the result: the cold-start row is void for
+  Session 5 and open; the corollary, the pre-purge copies and the licence stand in the escalations
+  as ruled; NEXT-SINGLE-ACTION is the exam, with Al's addition on the launching message.
+- Verified before Al was shown the diff: `bash scripts/check.sh` → `ALL GREEN` on the edited tree;
+  `git ls-files --eol` shows every tracked file `i/lf w/lf`; the constitution's Session-N block
+  equals the text between R4's marker lines byte for byte; the verbatim blocks in ADR-0003, STATE
+  and this entry equal the corresponding lines of the one script-made copy of Al's message; the
+  new HANDOFF begins with the old HANDOFF's bytes unchanged; the constitution's diff touches only
+  the header line and the §6 block.
+- The stop, and Al's answer. Before any commit Al was shown the constitution's complete diff and
+  ADR-0003 as amended in full. STATE and this entry were listed with a summary of each, as his
+  order asked; the three readings of step (0) were put to him in that summary, not in STATE's own
+  words. He accepted (his answer, above) with one change: the launch directory in R7 is his
+  practice, not a condition of the exam. STATE's NEXT-SINGLE-ACTION now says so, and this entry
+  was completed with his answer. The constitution and ADR-0003 are byte for byte what he was
+  shown (SHA-256 taken before the files were regenerated and compared after). On the final tree
+  `bash scripts/check.sh` → `ALL GREEN` again, and the byte checks above were repeated. The
+  harness summarized the conversation's context once, at about the time the diff was shown; the
+  files were regenerated from the session's scripts and templates, not from recall.
+BELIEF DELTAS:
+- Session 6 first wrote "launches from the repository directory (R7)" into NEXT-SINGLE-ACTION
+  beside the exam's conditions, where a cold session could take the directory for one of them.
+  Al's answer: R7 is his practice, not a condition of the exam, and a session launched from
+  another directory is no less cold for it. Evidence: his answer, above. STATE was corrected
+  before the commit.
+- Session-start me read STATE's escalation "Delete `MEMORY.md.bak` and `project_friedman.md.bak`"
+  as a description of the machine. It described 2026-08-25. On 2026-11-22 both were gone, and so
+  was the third file Al named. Evidence: the two existence checks above. State files are claims.
+- A session launched with the amended prompt must write to `PROGRAM/HANDOFF.md` before it may
+  read anything that would tell it how the gate treats that file. The gate fails on a carriage
+  return in any `PROGRAM/` file, and on this machine the obvious appends write one: in scratch
+  tests today PowerShell 7.7.0 `Add-Content` and `>>` both appended `0d 0a`, and so did Python
+  3.11.9 through a text-mode file; Git Bash `>>` and Python with `newline="\n"` appended `0a`.
+  ADR-0003 is the only file such a session reads in time, so the warning is there (Amendment 1,
+  note 3).
+- The harness does not hand a session Al's message bare. Session 6's arrived inside a paste
+  wrapper, beside context blocks the harness attached. A rule that "the message carries nothing
+  beyond §6's text" has to say that those are not the message; STATE's step (0) now says so, as
+  the executor's reading.
+- This session's memory directory is named for the directory the session was started in
+  (`C--Users-LEET` for `C:\Users\LEET`), and no directory named for the repository's path exists
+  beside it (tested by name; nothing was listed). An inference, not verified: a session launched
+  from the repository directory (R7) is given a different store, and possibly none. Such a session
+  discloses what it is given and opens no other store (R3).
+CONFUSIONS:
+- STATE at `7c3e5dd` gave the verifier "44 checks". At `7c3e5dd` it prints 47 `PASS` lines, 11 of
+  them the per-file line-ending checks, and `RESULT: ALL PASS`. Where 44 came from was not
+  established, and no exit criterion depends on the count. Doc fix: STATE now cites the `RESULT`
+  line.
+- To see how SYNDEOM's constitution notes its amendments (R4), the executor read four things in
+  the SYNDEOM working copy — the constitution's header, its memory rule, its §6 and its ADR-0009 —
+  and ran `git status`, `git rev-parse` and `git ls-remote` there. A `cd` into that copy moved the
+  harness's working directory, and the next command was held for a second review. Cost: one
+  repeated call. Nothing was written there (`git status --porcelain` empty afterwards). Lesson:
+  `git -C <path>` and absolute paths for anything outside this repo.
+- The date. The machine's local date was 2026-11-21 (EST) while UTC was 2026-11-22. The amended
+  prompt asks for the UTC date, so this entry, STATE and the amendment use UTC and say so.
+HONESTY CHECK: no CLAIM transitions; CLAIMS.md is untouched. The cold-start row goes from
+CONDITIONAL PASS to void-and-open — a downgrade, by Al's ruling, recorded plainly. R5 is recorded
+as "nothing to delete", not as a deletion. In ADR-0003 and STATE, Al's words sit in verbatim
+blocks and the executor's are labelled as the executor's. Nothing entered a register from memory
+or from the sweep.
+LEAKAGE CHECK: checked, not assumed — the decisions recorded this session are process (memory
+disclosure, launch prompt, launch directory); none cites a corpus. `quarantine/` holds only its
+`README.md` (listed this session). No leakage.
+DETERMINISM CHECK: no MEASURED or REPRODUCED results. Every verbatim block was produced by script
+from one copy of Al's message and compared byte for byte. Nothing to quarantine from CLAIMS.
+DRIFT CHECK: no verdict creep; no demo drift; no detector-shopping. The live temptation was scope:
+a disclosure script in the repo, SYNDEOM's hashing and orientation rules, a rehearsal of the exam.
+None was done — R2 adopts SYNDEOM's order "and nothing else", and a rehearsal by a builder is what
+R1 voids.
+NEXT-SINGLE-ACTION: see STATE.md — the Gate F0 cold-start exam, in a new conversation that Al
+launches with the amended §6 Session-N prompt verbatim and nothing else. The directory he
+launches it from is his practice (R7), not a condition of the exam.
+ESCALATIONS:
+- Licence (R6): ruled; its ADR waits for a session Al asks for after Gate F0 closes. That session
+  asks Al for the commercial-licence contact line and does not copy SYNDEOM's.
+- Not open; recorded so that it is not reopened. The four notes in ADR-0003's Amendment 1 and the
+  three readings in STATE's step (0) are the executor's words, not rulings. Al accepted them as
+  written (his answer, above), with the header-only amendment note, the UTC dates and this
+  commit's Co-Authored-By trailer.
+- CI for this commit is confirmed by Session 6 after the push and reported to Al in the
+  conversation; the repo's record of it is made by the next session at ORIENT, as STATE's build
+  line says.
+STOP-REASON: blocker requiring Al — the next action is an exam that only a cold session can run,
+and only Al can launch one. Default branch green.

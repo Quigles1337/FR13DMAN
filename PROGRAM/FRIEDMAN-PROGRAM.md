@@ -9,6 +9,9 @@ pure mechanism begins to fool each detector of language and intentional design.
 numbering, identical `PROGRAM/` schema, identical loop. Every difference between them is load-bearing.
 **Engineer of record:** Al (Quigles1337). **Executor:** Claude Code, running the loop in §4.
 **This file is the constitution.** Read at the start of every session; amended only via ADR (§3.5).
+**Amendments:** ADR-0003, Amendment 1 (2026-11-22 UTC, Session 6; Al's rulings of 2026-11-22
+UTC) — the §6 Session-N prompt, memory disclosure first in every session launched with that
+prompt.
 
 ---
 
@@ -298,11 +301,18 @@ then run the loop (§4) starting Phase F0. End with a complete HANDOFF entry per
 
 ### Session N — resume
 ```
-You are the executor of the FRIEDMAN program. Read PROGRAM/FRIEDMAN-PROGRAM.md in full, then run
-the metacognitive loop (§4) exactly: ORIENT from the repo (state files are claims; builds are
-evidence), ASSESS, PLAN one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per
-the §4.5 schema — including the LEAKAGE, DETERMINISM, and DRIFT checks — and stop clean per §4.6.
-Honor escalations — some decisions are Al's, not yours.
+Before anything else, make the memory disclosure that ADR-0003 requires: read
+PROGRAM/FRIEDMAN-PROGRAM.md and PROGRAM/DECISIONS/ADR-0003.md in full, read the executor memory they
+tell you to disclose, and append the disclosure as the first entry of a new block at the end of
+PROGRAM/HANDOFF.md, whether or not this session will attempt a gate's cold-start test, and with no
+other command or file read first. Append it without reading HANDOFF's existing contents (a shell
+append or a script, not a file-editing tool that reads the file first), under a provisional block
+header that carries the UTC date and that you complete after orientation without changing the
+disclosure. You are the executor of the FRIEDMAN program. Having disclosed, run the metacognitive
+loop (§4) exactly: ORIENT from the repo (state files are claims; builds are evidence), ASSESS, PLAN
+one thing, EXECUTE under the §1 constitution, VERIFY, RECORD+REFLECT per the §4.5 schema — including
+the LEAKAGE, DETERMINISM, and DRIFT checks — and stop clean per §4.6. Honor escalations — some
+decisions are Al's, not yours.
 ```
 
 ---
