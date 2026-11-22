@@ -136,3 +136,48 @@ notes that the copy is not committed.
 
 - **Rule going forward:** a crate is added to `engine/` only after its license is appended to this
   table (same session, same commit). Ambiguity → escalate to Al (F11).
+
+## S-0006 — PolyForm Noncommercial License 1.0.0 — the repository licence text (ADR-0005; R6)
+
+- **Citation:** PolyForm Project. "PolyForm Noncommercial License 1.0.0." File
+  `PolyForm-Noncommercial-1.0.0.md` in the GitHub repository `polyformproject/polyform-licenses`,
+  whose README describes it as the "official texts of PolyForm Project licenses". The text names
+  its own canonical URL, `https://polyformproject.org/licenses/noncommercial/1.0.0`.
+- **URL:**
+  `https://raw.githubusercontent.com/polyformproject/polyform-licenses/a2316cfa35d3947fdc5af4bcc1f321662bfd79d8/PolyForm-Noncommercial-1.0.0.md`
+  — pinned by commit. `a2316cfa…` was the head of that repository's default branch on the access
+  date (committed 2026-11-19T17:34:25Z). The branch is named `1.0.0`. It is a branch and not a
+  tag (GitHub API: no tag ref of that name), so a URL through the name can move and the pinned
+  URL cannot. The file last changed in commit `9c032bcb6b44a68f90efddd1060cf71d4e6fd7ce`
+  (2020-05-14, "Version 1.0.0s").
+- **Access date:** 2026-11-22 (curl; HTTP 200 at 17:15:47Z by the branch name and at 17:16:17Z
+  by the pinned commit; the copy at `9c032bcb…` was fetched at 17:16:17Z as well). All three
+  copies are byte-identical: 4,563 bytes, 73 lines, LF only, no byte-order mark. The canonical
+  URL returned HTTP 200 at 17:16:03Z as an HTML page titled "NonCommercial 1.0.0"; the same URL
+  with a trailing slash returned 404. The HTML page was not compared with the text.
+- **License (of the text itself):** the same repository's `LICENSE.md` at the pinned commit
+  (retrieved 2026-11-22T17:16:17Z, HTTP 200, 475 bytes, SHA-256
+  `d04a8527e90a7f7fe36083fa1fd25db16b0e43c2244f4f6880f7a2c5d18c631e`): "Each contributor licenses
+  you to do everything with PolyForm licenses that would otherwise infringe that contributor's
+  copyright in it. If you make changes to a PolyForm license, you must remove all mention of
+  "PolyForm" and polyformproject.org, as well." The text is used unchanged, so its licence
+  permits redistribution → **stored copy committed**, inside `LICENSE`:
+  - SHA-256 `c0ea4a896d2c8c394b29f9427589996db826cd501c512279ff0ed3ef48fabbe5` (4,563 bytes,
+    the text as retrieved).
+  - `LICENSE` at the repo root is the line
+    `Required Notice: Copyright 2026 Alexander David Zalewski (https://github.com/Quigles1337/FR13DMAN)`,
+    one blank line, and then those bytes: 4,663 bytes, SHA-256
+    `09f7b40282136d03a161039f3d7b9d516b1069bbe380d494ab2ac83ef18701dc`. Its bytes from the third
+    line on re-hash to the digest of the text (script).
+- **SPDX:** `PolyForm-Noncommercial-1.0.0`. The SPDX License List entry
+  `https://spdx.org/licenses/PolyForm-Noncommercial-1.0.0.json` (HTTP 200 at
+  2026-11-22T17:15:48Z) gives that `licenseId`, the name "PolyForm Noncommercial License 1.0.0",
+  and `isDeprecatedLicenseId: false`. The crate's `license` field uses this identifier.
+- **Cross-check, not a source:** the sibling program's record (Syndeom S-0073 and ADR-0010, read
+  at `Quigles1337/Syndeom` `main` `d6771abf49cc47902b245d2c7b71048d9d5078fe`) gives 4,563 bytes
+  and the same SHA-256 for the text it retrieved on 2026-10-27, and that repository's `LICENSE`,
+  from its third line on, is byte-identical to this copy. That record cites the text and its
+  terms "at tag `1.0.0`" and quotes the terms from the upstream README. On 2026-11-22 the name
+  was a branch, and the terms were in `LICENSE.md`: upstream moved them there in `a2316cfa…`.
+- **Role:** the licence under which FRIEDMAN's original software and technical documentation
+  are offered (ADR-0005 D1). No CLAIM depends on it.

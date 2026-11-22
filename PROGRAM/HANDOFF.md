@@ -1389,3 +1389,153 @@ ESCALATIONS:
   and otherwise is made by the next session at ORIENT.
 STOP-REASON: none at this commit: the session goes on to the licence ADR. If no text follows
 this part, the session ended before Al answered on the licence. Default branch green.
+
+SECOND PART — the licence ADR (R6, and Al's order in the message above). Appended after the first
+part's commit, `92367a6`, was pushed. Nothing above this line was changed.
+
+- **CI for the first part.** `check` `success` for `92367a6` (run 45048292214, a push event,
+  2026-11-22T17:14:12Z; one job, `gate`, 8 steps, all successful).
+- **The stop.** The licence change was prepared in the working tree and the gate run on it.
+  Before any commit Al was shown ADR-0005 in full, the first lines of `LICENSE` and README
+  § Licence, as his order asked, with the other changed files listed and the five readings
+  pointed out. SHA-256 of the three as shown:
+  - `PROGRAM/DECISIONS/ADR-0005.md` `3529aa153a7cf9a57d1d03fc6476b245dc60fd361fd38afac9430df3d590e525`
+  - `LICENSE` `09f7b40282136d03a161039f3d7b9d516b1069bbe380d494ab2ac83ef18701dc`
+  - `README.md` `7b6fc2ac8fdb78e44cc593459798384f0eeab7f996828edab9e2798ce2efd776`
+
+AL'S ANSWER (verbatim). His second message in the conversation, received
+2026-11-22T17:44:12.227Z (the harness's record) and copied from that record by script. The
+harness delivered it inside a paste wrapper; outside the wrapper the record's message holds
+3 characters, all of them whitespace. Each numbered item is one line, as he sent it.
+
+```text
+Accepted, with these changes and no further stop.
+
+1. Strike D2(b), and the bullet of the README that mirrors it. It does not apply to FRIEDMAN: nothing here is separately controlled, and R6 follows SYNDEOM's D2 only so far as it applies. State in the ADR that SYNDEOM's D2(b) is not followed, and change your second reading to match. Leave the quotation of SYNDEOM's two decisions as it is.
+
+2. In D3 write "grants" for "claims", and in the README's bullet on earlier versions write "granted" for "claimed". No permission was given for earlier versions, and none is given for them now. The README keeps that bullet.
+
+3. Readings 1, 3, 4 and 5 stand. On 3: the sweep report is program documentation, and no one else controls it.
+
+4. The contact line being in 92367a6 already is fine. The address was public before.
+
+5. After the licence commit, as a commit of its own, add a fifth note to ADR-0003's Amendment 1, marked as my ruling of today, in these words: "The disclosure append opens PROGRAM/HANDOFF.md for appending without creating it, and asks the file system nothing else about it: no existence test and no size."
+
+Make the changes, re-run the gate, commit, push, confirm CI and stop. F1.1 stays the next action.
+```
+
+WHAT THE ANSWER CHANGED. All of it was done before the licence commit.
+
+- **Item 1.** D2(b) is struck from ADR-0005, and the ADR says, under D2 and in its context,
+  that SYNDEOM's D2(b) is not followed. The README's sentence on separately controlled
+  materials is struck; the one item left under "does not cover" is now a sentence, in the same
+  words. Reading 2 is changed to match. The quotation of SYNDEOM's two decisions is as it was.
+- **Item 2.** D3 says "grants", and the README's bullet on earlier versions says "granted".
+  The same word is changed where other text restates D3: the ADR's first consequence and
+  STATE's Licence bullet.
+- **Item 3.** Readings 1, 3, 4 and 5 stand. Reading 3 ended with a sentence that pointed to
+  D2(b). That sentence is replaced by Al's ruling: the sweep report is program documentation,
+  and no one else controls it. The line that introduces the readings says what he ruled.
+- **Item 4** answers the "for Al's information" line of the first part: the contact line in
+  `92367a6` is fine.
+- **Item 5.** The fifth note of ADR-0003's Amendment 1 is the next commit, of its own. It is
+  recorded in the third part of this block.
+- The ADR's Status line says that Al accepted with changes, and the ADR carries his answer
+  verbatim as far as it concerns the licence: its opening line and items 1 to 4.
+
+PHASE / GATE: F1 — REPRODUCTIONS / Gate F1 open, nothing started. This part does not move it.
+ADVANCED:
+- **ADR-0005**, the licence as R6 rules it: the PolyForm Noncommercial License 1.0.0 for
+  FRIEDMAN's original software and technical documentation, from the accepting commit (D1);
+  what it does not cover, which is third-party material, with SYNDEOM's D2(b) not followed
+  (D2); no earlier licence, and none granted for earlier versions (D3); where it is stated
+  (D4); historical records not rewritten (D5). R6, Al's order and his answer are in the ADR
+  verbatim, copied by script. Syndeom ADR-0010's D1 and D2 are quoted in it, copied by script
+  from the file fetched at `Quigles1337/Syndeom` `d6771ab`. The executor's five readings are
+  listed in the ADR with Al's ruling on them.
+- **`LICENSE`** at the repo root, built by script: the Required Notice line copied from R6, one
+  blank line, and the PolyForm text as retrieved (4,663 bytes, SHA-256
+  `09f7b40282136d03a161039f3d7b9d516b1069bbe380d494ab2ac83ef18701dc`). It is byte for byte the
+  file Al was shown.
+- **README § Licence**, new: a plain-language summary, checked against the licence text
+  section by section; Al's contact line, copied by script from his message; that earlier
+  versions carried no licence and are granted none; what the licence does not cover; a pointer
+  to ADR-0005 and S-0006.
+- **`engine/manifest/Cargo.toml`:** `license = "PolyForm-Noncommercial-1.0.0"`, one line added.
+  `engine/Cargo.lock` is unchanged.
+- **S-0006** in SOURCES.md: the licence text, retrieved this session and pinned by commit, with
+  its digest, the terms of the text itself, and the SPDX entry.
+- **STATE:** a Licence bullet at the top; the licence escalation closed; the escalation on the
+  disclosure append marked as ruled; the build line. NEXT-SINGLE-ACTION unchanged.
+- **Verified on the tree of the commit.** `bash scripts/check.sh` → `ALL GREEN` (16/16 tests;
+  fmt and clippy clean with the new field; verifier `RESULT: ALL PASS`). `git ls-files --eol`
+  over the changed and new files: all LF. `LICENSE` from its third line on is byte-identical to
+  the retrieved text (script). The verbatim blocks in the ADR equal their sources (script).
+  SHA-256 as committed, after Al's changes:
+  - `PROGRAM/DECISIONS/ADR-0005.md` `3b10ea524dce772389590c8f61f6066c0ff00f2d648cfcb570a852019d6cb61f`
+  - `LICENSE` `09f7b40282136d03a161039f3d7b9d516b1069bbe380d494ab2ac83ef18701dc`
+  - `README.md` `5ed4f2e123da4e3c284674b626bf7e0cb49f80e9bb554038a0ee5123c296c560`
+- No CLAIM moved. CLAIMS.md, the constitution, ADR-0000 to ADR-0004, the engine's source and
+  tests and `engine/Cargo.lock` are untouched by this commit.
+BELIEF DELTAS:
+- I expected SYNDEOM's record to give me a pinned source for the licence text. Its URL does
+  return the text, with the digest it records. Its description of the URL does not hold: it
+  says "tag `1.0.0`", and on 2026-11-22 the GitHub API shows no such tag. `1.0.0` is the upstream
+  repository's default branch, and its head moved on 2026-11-19. Evidence: S-0006. A sibling's
+  record is a pointer; F11 means retrieving again, and this is why.
+- I expected the upstream README to state the terms of the licence text, as SYNDEOM's S-0073
+  quotes it. Upstream moved them to `LICENSE.md` three days before this session. S-0006 quotes
+  that file at the pinned commit.
+- I read "so far as they apply" as leave to keep a decision that has nothing to apply to, and
+  wrote D2(b) into the ADR as a rule for material that might arrive. Al struck it: a decision
+  that does not apply is not followed. Evidence: his answer, item 1.
+- I wrote that the ADR "claims" no licence for earlier versions, taking the verb from Al's
+  order. His order tells the ADR not to claim that an earlier licence existed. What D3 has to
+  say is different: no permission was given for earlier versions, and none is given now. The
+  word is "grants". Evidence: his answer, item 2.
+CONFUSIONS:
+- The text's canonical URL with a trailing slash returns 404; without it, 200. Cost: one
+  repeated fetch. Recorded in S-0006.
+- The contact line Al gave has the same words as the sentence in SYNDEOM's README, which the
+  session saw while reading how that repository states its licence. The line in FRIEDMAN is
+  copied by script from Al's message, as he ordered, and from nowhere else.
+- An edit to `engine/manifest/Cargo.toml` removed the space after `description =` as it added
+  the `license` line. The script that checks the hand-edited files reported two changed lines
+  where one was meant, and the space was restored before the gate ran. Cost: one edit. Lesson:
+  check a hand edit by its diff, not by its intent.
+HONESTY CHECK: no CLAIM transition. S-0006 entered SOURCES only after the text was retrieved
+this session and hashed; the sibling's record was used as a pointer and a cross-check, and is
+marked as such in the entry. The HTML page at the canonical URL was not compared with the text,
+and S-0006 says so. The ADR's readings are marked as the executor's, and Al's ruling on each is
+recorded beside them; the one he overruled is recorded as overruled. The files as committed
+differ from the files as shown, by Al's changes and by nothing else the session knows of; both
+sets of digests are above. The README's summary is the executor's paraphrase and says that the
+licence text governs. Nothing entered a register from memory or from the sweep.
+LEAKAGE CHECK: checked, not assumed. The decision recorded is a licence. It cites no corpus and
+touches no dial, detector, tolerance or manifest. `quarantine/` holds only its `README.md`
+(listed again). No leakage.
+DETERMINISM CHECK: no MEASURED or REPRODUCED result. `LICENSE` is regenerable from the pinned
+URL in S-0006 and the notice line in R6, and its digest is recorded. The crate's `license`
+field changes no output: nothing reads it.
+DRIFT CHECK: no verdict creep; no demo drift; no detector-shopping. The live temptation was
+scope again. Not done, because R6 names D1 and D2 only: a third-party notices file, a
+`CITATION.cff`, SPDX headers in source files. Not done, because it is another program's record:
+correcting SYNDEOM's "tag `1.0.0`". One thing was done that went past the order and Al cut it:
+D2(b), above.
+NEXT-SINGLE-ACTION: see STATE.md — unchanged. F1.1, first step: retrieve the Miller and Li
+random-typing sources, record each in SOURCES.md, and seed CLAIM-0004 as UNKNOWN before any
+generator code.
+ESCALATIONS:
+- **The disclosure append and ADR-0003's notes — ruled by Al** (his answer, item 5). The fifth
+  note is the next commit, of its own.
+- **Licence (R6) — closed** by ADR-0005 on Al's answer.
+- **The contact line in `92367a6` — closed** by item 4 of his answer.
+- For Al's information; not this program's to fix. SYNDEOM's S-0073 and ADR-0010 cite the
+  PolyForm text and its terms "at tag `1.0.0`". The name is a branch, and since 2026-11-19 the
+  upstream README no longer carries the terms S-0073 quotes: they are in upstream's
+  `LICENSE.md`. The licence text and its digest are unchanged.
+- Not open; ahead. F1.3 needs generators that were not publicly released on 2026-08-22
+  (CLAIM-0001). Contacting the author is Al's decision (§4.6) if the release has not appeared
+  when F1.3 is reached.
+STOP-REASON: none at this commit. Al's answer orders one more commit, the fifth note of
+ADR-0003's Amendment 1, and then the stop. Default branch green.

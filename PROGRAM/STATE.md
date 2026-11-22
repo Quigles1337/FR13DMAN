@@ -1,6 +1,7 @@
 # STATE
 
-- **Updated:** 2026-11-22 UTC (Session 8, after Al's rulings A–D on Session 7)
+- **Updated:** 2026-11-22 UTC (Session 8, close: Al's rulings A–D on Session 7, then the licence
+  ADR)
 - **Phase:** F1 — REPRODUCTIONS (opened 2026-11-22 UTC, when Gate F0 closed)
 - **Gate:** F1 (**open**; nothing started). **Gate F0 is CLOSED — 2026-11-22 UTC, at `edcee64`** —
   by the cold-start exam Session 7 ran: a new conversation launched with the §6 Session-N prompt
@@ -16,14 +17,23 @@
   UTC). It is his practice and not a condition of an exam (his answer, HANDOFF Session 6).
   Sessions 6, 7 and 8 were all started in `C:\Users\LEET`; Sessions 7 and 8 found the repo from
   the location line in the executor's memory, which ADR-0003 D1 allows.
+- **Licence:** the **PolyForm Noncommercial License 1.0.0** (SPDX `PolyForm-Noncommercial-1.0.0`)
+  for FRIEDMAN's original software and technical documentation, from the commit that adds
+  ADR-0005 (ruled by Al, R6; that commit was made only after he accepted the ADR). `LICENSE` at
+  the repo root opens with the Required Notice line R6 gives; README § Licence has a
+  plain-language summary and Al's contact line for commercial licensing; the crate carries
+  `license = "PolyForm-Noncommercial-1.0.0"`, and a crate added later carries the same value;
+  the provenance of the text is S-0006. Third-party material keeps its own licence (ADR-0005
+  D2). FRIEDMAN carried no licence before that commit: every commit from `eced49d` through
+  `92367a6` was published without one, and none is granted for them (ADR-0005 D3).
 - **Build status:** **green** = `bash scripts/check.sh` prints `ALL GREEN` (ADR-0002 D6: fmt
   --check + `cargo test` + clippy `-D warnings` + lab verifier). Last verified locally 2026-11-22
-  UTC by Session 8, at `31e503f` with its HANDOFF append in the tree and again on the tree of
-  the commit that records rulings A–D (16/16 tests; verifier `RESULT: ALL PASS`). CI:
-  `.github/workflows/check.yml` runs the same script on push to `main` and on PRs; last known CI
-  success on `main` @ `31e503f` (run 45001069373; one job, 8 steps). Check
-  `gh run list -R Quigles1337/FR13DMAN --branch main` at ORIENT; this line lags the last push by
-  one run.
+  UTC by Session 8: at `31e503f` with its HANDOFF append in the tree, on the tree of `92367a6`,
+  and on the tree of the commit that adds ADR-0005, with the crate's new `license` field (16/16
+  tests; verifier `RESULT: ALL PASS`). CI: `.github/workflows/check.yml` runs the same script on
+  push to `main` and on PRs; last known CI success on `main` @ `92367a6` (run 45048292214; one
+  job, 8 steps). Check `gh run list -R Quigles1337/FR13DMAN --branch main` at ORIENT; this line
+  lags the last push by one run.
   **Never make the workflow a required status check** (ADR-0002 D6). On 2026-11-22 UTC `main` had
   no branch protection and the repository no ruleset (GitHub API).
 - **Toolchain (pinned, ADR-0002 D1):** `rust-toolchain.toml` at repo root → `1.91.0` + clippy +
@@ -168,25 +178,23 @@ rulings govern.
 
 ## Standing escalations
 
-- **The disclosure append and ADR-0003's notes — for Al.** Ruling A orders that "from now on the
-  append asks the file system nothing, as Session 7's note 2 has it". Note 2 is in this file. A
-  session launched with the §6 Session-N prompt appends its disclosure before it may read this
-  file: the constitution and ADR-0003 are all it reads first, and ADR-0003's notes for the
-  disclosing session say nothing about queries or about creating the file. Session 8 knew of
-  ruling A only because its launching message carried it. Its append asked the file system
-  nothing, but its call would have created the file had it been missing, which note 2 excludes
-  (HANDOFF Session 8, LAUNCH (e)). A fifth note in ADR-0003's Amendment 1 would put the rule
-  where a cold session reads it in time. Editing the ADR is not something Al's message orders,
-  so Session 8 did not. **Open — Al's to order or decline.**
-- **Licence — ruled (R6); Al has asked for it; in preparation, not committed.** The PolyForm
-  Noncommercial License 1.0.0 under the Required Notice that R6 states, following Syndeom ADR-0010
-  D1 and D2 so far as they apply to FRIEDMAN, implemented by an ADR of its own. Al asked for that
-  ADR in the message that launched Session 8 and gave the commercial-licence contact line there
-  (HANDOFF Session 8). Session 8 prepares it in the working tree, shows it to Al, and commits it
-  only on his answer "accepted". At the commit that carries this text there is still no `LICENSE`
-  file and no crate carries a `license` field. If no later commit adds
-  `PROGRAM/DECISIONS/ADR-0005.md`, the licence was not accepted or not finished, and it is Al's
-  to ask for again. **Open — waits for Al's answer.**
+- **The disclosure append and ADR-0003's notes — ruled by Al; the note follows in a commit of
+  its own.** Ruling A orders that "from now on the append asks the file system nothing, as
+  Session 7's note 2 has it". Note 2 is in this file, and a session launched with the §6
+  Session-N prompt appends its disclosure before it may read this file. Session 8's append
+  asked the file system nothing, but its call would have created the file had it been missing
+  (HANDOFF Session 8, LAUNCH (e)). In his answer to Session 8 (item 5) Al ordered a fifth note
+  in ADR-0003's Amendment 1, in his words, as a commit of its own after the licence commit.
+  **Ruled. If ADR-0003's notes for the disclosing session end at note 4, that commit was not
+  made, and it is the first thing to do.**
+- **Closed by ADR-0005 (2026-11-22 UTC), recorded in HANDOFF Session 8:** the licence (R6). Al
+  asked for the ADR in the message that launched Session 8 and gave the commercial-licence
+  contact line there. Session 8 prepared it in the working tree and showed it to him. He
+  accepted it with changes, which were made before the commit: SYNDEOM's D2(b) is not followed
+  and was struck, with the README sentence that mirrored it; D3 and the README say that no
+  licence is granted for earlier versions; of the executor's five readings, 1, 3, 4 and 5
+  stand and 2 is changed. His answer is in HANDOFF (Session 8) whole, and in ADR-0005 as far
+  as it concerns the licence. The *Licence* bullet at the top of this file is the result.
 - **Closed by rulings A–D (2026-11-22 UTC), recorded in HANDOFF Session 8:** Session 7's
   disclosure order (A: not a breach; the closing of Gate F0 stands); Session 7's reading of its
   memory (B: accepted); the four how-to points (C: accepted); Session 7's four notes on the exam
